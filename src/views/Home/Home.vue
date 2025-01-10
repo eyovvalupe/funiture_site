@@ -1,5 +1,8 @@
 <template>
-    <section class="w-full min-h-screen bg-no-repeat bg-cover bg-center first_bg">
+    <section class="w-full relative">
+        <div class="first_bg">
+            <img src="/static/img/bg1.webp" alt="" />
+        </div>
         <div class="w-full min-h-screen bg-[rgba(139,136,136,0.4)] flex items-center justify-center pt-28">
             <div class="container mx-auto px-5">
                 <div data-aos="zoom-in" data-aos-duration="2000" class="flex flex-col gap-10 items-center py-5 md:py-0">
@@ -58,8 +61,11 @@
         </div>
     </section>
 
-    <section class="mt-5 bg-no-repeat bg-cover bg-center second_bg">
-        <div class="container mx-auto p-5">
+    <section class="mt-5 relative">
+        <div class="second_bg">
+            <img src="/static/img/bg2.webp" alt="" />
+        </div>
+        <div class="container mx-auto p-5 relative">
             <div class="hidden lg:flex rounded-lg w-[100%] p-10 justify-between mb-5">
                 <div data-aos="fade-right" data-aos-duration="2000">
                     <h3 class="text-[32px] text-white font-bold mb-5">
@@ -337,13 +343,23 @@ const toggleModal = () => (modal.value = !modal.value);
 </script>
 <style lang="css" scoped>
 .first_bg {
-    background-image: url('static/img/bg1.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 .second_bg {
-    background-image: url('static/img/bg2.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 </style>
