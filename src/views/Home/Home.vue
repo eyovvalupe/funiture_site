@@ -1,5 +1,5 @@
 <template>
-    <section class="w-full min-h-screen bg-no-repeat bg-cover bg-center bg-[url('static/img/bg1.jpg')]">
+    <section class="w-full min-h-screen bg-no-repeat bg-cover bg-center bg-[url('static/img/bg1.webp')]">
         <div class="w-full min-h-screen bg-[rgba(139,136,136,0.4)] flex items-center justify-center pt-28">
             <div class="container mx-auto px-5">
                 <div data-aos="zoom-in" data-aos-duration="2000" class="flex flex-col gap-10 items-center py-5 md:py-0">
@@ -58,7 +58,7 @@
         </div>
     </section>
 
-    <section class="mt-5 bg-no-repeat bg-cover bg-center bg-[url('static/img/bg2.jpg')]">
+    <section class="mt-5 bg-no-repeat bg-cover bg-center bg-[url('static/img/bg2.webp')]">
         <div class="container mx-auto p-5">
             <div class="hidden lg:flex rounded-lg w-[100%] p-10 justify-between mb-5">
                 <div data-aos="fade-right" data-aos-duration="2000">
