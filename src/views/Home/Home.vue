@@ -338,8 +338,12 @@ const toggleModal = () => (modal.value = !modal.value);
 <style lang="css" scoped>
 .first_bg {
     background-image: url('static/img/bg1.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .second_bg {
     background-image: url('static/img/bg2.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 </style>
