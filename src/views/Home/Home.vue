@@ -29,6 +29,7 @@
                 </div>
                 <div class="w-[100%] flex flex-wrap gap-[1.5%]">
                     <div data-aos="fade-right" data-aos-duration="2000" v-for="item in list" :key="item.id"
+                        @click="jump(item.id)"
                         class="border w-[18.8%] p-5 rounded-lg flex flex-col items-center mb-5 bg-white cursor-pointer">
                         <img :src="`static/img/${item.id}.webp`" alt=""
                             class="w-full h-[170.67px] rounded-lg mb-[20px] hover:scale-[1.1] transition-all duration-300 ease-in" />
@@ -48,7 +49,8 @@
                 </div>
                 <div class="w-[100%] flex flex-wrap gap-[2%]">
                     <div v-for="item in list" :key="item.id"
-                        class="border w-[49%] sm:w-[32%] p-5 rounded-lg flex flex-col items-center mb-2 sm:mb-3.5 bg-white cursor-pointer gap-5">
+                        class="border w-[49%] sm:w-[32%] p-5 rounded-lg flex flex-col items-center mb-2 sm:mb-3.5 bg-white cursor-pointer gap-5"
+                        @click="jump(item.id)">
                         <img :src="`static/img/${item.id}.webp`" alt=""
                             class="w-wull h-[122.22px] rounded-lg hover:scale-[1.1] transition-all duration-100 ease-in" />
                         <div class="">
@@ -245,19 +247,17 @@
                         </div>
                         <div data-aos="zoom-in" data-aos-duration="2000">
                             <img class="h-full w-full rounded-lg transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
-                                src="/static/img/LH237.webp"
-                                alt="">
+                                src="/static/img/LH237.webp" alt="">
                         </div>
                         <div data-aos="fade-right" data-aos-duration="2000">
                             <img class="h-full w-full rounded-lg transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
-                            src="/static/img/LH238.webp" alt="">
+                                src="/static/img/LH238.webp" alt="">
                         </div>
                     </div>
                     <div class="grid gap-4">
                         <div data-aos="fade-down" data-aos-duration="2000">
                             <img class="h-full w-full rounded-lg transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
-                                src="/static/img/LH239.webp"
-                                alt="">
+                                src="/static/img/LH239.webp" alt="">
                         </div>
                         <div data-aos="zoom-in" data-aos-duration="2000">
                             <img class="h-full w-full rounded-lg transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
@@ -275,30 +275,25 @@
                         </div>
                         <div data-aos="zoom-in" data-aos-duration="2000">
                             <img class="h-full w-full rounded-lg transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
-                                src="/static/img/LH243.webp"
-                                alt="">
+                                src="/static/img/LH243.webp" alt="">
                         </div>
                         <div data-aos="fade-up" data-aos-duration="2000">
                             <img class="h-full w-full rounded-lg transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
-                                src="/static/img/LH244.webp"
-                                alt="">
+                                src="/static/img/LH244.webp" alt="">
                         </div>
                     </div>
                     <div class="grid gap-4">
                         <div data-aos="fade-left" data-aos-duration="2000">
                             <img class="h-full w-full rounded-lg transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
-                                src="/static/img/LH245.webp"
-                                alt="">
+                                src="/static/img/LH245.webp" alt="">
                         </div>
                         <div data-aos="zoom-in" data-aos-duration="2000">
                             <img class="h-full w-full rounded-lg transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
-                                src="/static/img/LH246.webp"
-                                alt="">
+                                src="/static/img/LH246.webp" alt="">
                         </div>
                         <div data-aos="fade-left" data-aos-duration="2000">
                             <img class="h-full w-full rounded-lg transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
-                                src="/static/img/LH247.webp"
-                                alt="">
+                                src="/static/img/LH247.webp" alt="">
                         </div>
                     </div>
                 </div>
@@ -309,11 +304,17 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import AOS from 'aos';
 import { list, newList } from "@/utils/Data";
 import { Carousel, Navigation, Slide } from "vue3-carousel";
 import 'vue3-carousel/dist/carousel.css'
+import store from "@/store";
+import router from "@/router";
+
+const jump = (id) => {
+    router.push({ name: 'detail', query: { id } })
+}
 
 const config = {
     itemsToShow: 4,
@@ -340,22 +341,26 @@ const config = {
 AOS.init();
 const modal = ref(false);
 const toggleModal = () => (modal.value = !modal.value);
+const token = computed(() => store.state.token)
 </script>
 <style lang="css" scoped>
 .first_bg {
     width: 100vw;
     height: 100vh;
     position: absolute;
+
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 }
+
 .second_bg {
     width: 100%;
     height: 100%;
     position: absolute;
+
     img {
         width: 100%;
         height: 100%;

@@ -43,6 +43,11 @@ const router = createRouter({
                     name: 'register',
                     component: () => import('../views/Public/Register.vue')
                 },
+                {
+                    path: '/detail',
+                    name: 'detail',
+                    component: () => import('../views/Detail/Detail.vue')
+                },
             ]
         },
         {
