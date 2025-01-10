@@ -1,5 +1,5 @@
 <template>
-    <section class="w-full min-h-screen bg-no-repeat bg-cover bg-center bg-[url('static/img/bg1.webp')]">
+    <section class="w-full min-h-screen bg-no-repeat bg-cover bg-center first_bg">
         <div class="w-full min-h-screen bg-[rgba(139,136,136,0.4)] flex items-center justify-center pt-28">
             <div class="container mx-auto px-5">
                 <div data-aos="zoom-in" data-aos-duration="2000" class="flex flex-col gap-10 items-center py-5 md:py-0">
@@ -58,7 +58,7 @@
         </div>
     </section>
 
-    <section class="mt-5 bg-no-repeat bg-cover bg-center bg-[url('static/img/bg2.webp')]">
+    <section class="mt-5 bg-no-repeat bg-cover bg-center second_bg">
         <div class="container mx-auto p-5">
             <div class="hidden lg:flex rounded-lg w-[100%] p-10 justify-between mb-5">
                 <div data-aos="fade-right" data-aos-duration="2000">
@@ -335,4 +335,11 @@ AOS.init();
 const modal = ref(false);
 const toggleModal = () => (modal.value = !modal.value);
 </script>
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+.first_bg {
+    background-image: url('static/img/bg1.webp');
+}
+.second_bg {
+    background-image: url('static/img/bg2.webp');
+}
+</style>
