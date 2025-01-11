@@ -167,10 +167,10 @@
                                     <p class="text-[#606060] font-normal w-[215.8px] mb-4">{{ news.info }}</p>
                                     <div class="flex justify-end items-center gap-5">
                                         <button
-                                            class="text-red-500 text-[24px] flex items-center gap-3 border py-2 px-10 rounded-lg hover:border-red-500"><i
+                                            class="text-red-500 text-[24px] flex items-center gap-3 border py-2 px-10 rounded-lg hover:border-red-500" @click="add(news)"><i
                                                 class='bx bx-cart'></i></button>
                                         <button
-                                            class="text-[#3B3B98] flex items-center gap-3 border py-2 px-10 rounded-lg hover:border-[#3B3B98]">Buy</button>
+                                            class="text-[#3B3B98] flex items-center gap-3 border py-2 px-10 rounded-lg hover:border-[#3B3B98]" @click="buy(news)">Buy</button>
                                     </div>
                                 </div>
                             </div>
@@ -214,10 +214,10 @@
                                     <p class="text-[#606060] font-normal w-[215.8px] mb-4">{{ news.info }}</p>
                                     <div class="flex justify-end items-center gap-5">
                                         <button
-                                            class="text-red-500 text-[24px] flex items-center gap-3 border py-2 px-10 rounded-lg hover:border-red-500"><i
+                                            class="text-red-500 text-[24px] flex items-center gap-3 border py-2 px-10 rounded-lg hover:border-red-500" @click="add(news)"><i
                                                 class='bx bx-cart'></i></button>
                                         <button
-                                            class="text-[#3B3B98] flex items-center gap-3 border py-2 px-10 rounded-lg hover:border-[#3B3B98]">Buy</button>
+                                            class="text-[#3B3B98] flex items-center gap-3 border py-2 px-10 rounded-lg hover:border-[#3B3B98]" @click="buy(news)">Buy</button>
                                     </div>
                                 </div>
                             </div>
@@ -337,6 +337,33 @@ const config = {
         },
     },
 };
+
+const myList = ref(localStorage.getItem('watchList') ? JSON.parse(localStorage.getItem('watchList')) : [])
+console.log("watch list =====>", myList.value)
+
+const add = (item) => {
+    if (!token.value) {
+        router.push({
+            name: 'login'
+        })
+        return;
+    }
+    console.log(item.id)
+    const temp = myList.value.find(i => i.id == item.id)
+    console.log("temp ========> ", temp)
+    if (temp) {
+        alert('Already added!');
+        return;
+    }
+    console.log(myList.value.push(item))
+    // localStorage.setItem('watchList', temp)
+    alert('Added Successfully!')
+    localStorage.setItem('watchList', JSON.stringify(myList.value))
+}
+
+const buy = () => {
+
+}
 
 AOS.init();
 const modal = ref(false);

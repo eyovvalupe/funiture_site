@@ -2,7 +2,7 @@
     <div class="auth-container">
         <div
             class="w-[300px] h-[500px] mx-auto border-[2px] rounded-[20px] px-[20px] py-[20px] flex flex-col justify-between">
-            <h2>Register</h2>
+            <h2 class="text-[32px]">Register</h2>
             <form @submit.prevent="handleRegister">
                 <div class="form-group">
                     <label for="username">Username</label>

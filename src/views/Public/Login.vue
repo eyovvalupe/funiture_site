@@ -1,7 +1,7 @@
 <template>
     <div class="auth-container">
         <div class="w-[300px] h-[400px] mx-auto border-[2px] rounded-[20px] px-[20px] py-[20px] flex flex-col justify-between">
-            <h2>Login</h2>
+            <h2 class="text-[32px]">Login</h2>
             <form class="h-[250px] flex flex-col justify-between" @submit.prevent="handleLogin">
                 <div class="form-group">
                     <label for="email">Email</label>
