@@ -3,7 +3,7 @@
         <div class="container mx-auto px-5">
             <nav class="w-full flex items-center justify-between py-5">
                 <div>
-                    <a href="#" class="flex items-center">
+                    <a href="/" class="flex items-center">
                         <div class="w-[50px] h-[50px] rounded-[50px] mr-[10px]">
                             <img src="/static/img/logo.webp" alt="" />
                         </div>

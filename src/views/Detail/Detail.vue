@@ -53,6 +53,7 @@
         <div class="text-[24px] mb-[15px]">Price: <span>{{ item.price }}</span></div>
       </div>
     </div>
+    {{ console.log(id) }}
   </div>
 </template>
 <script setup>
@@ -66,10 +67,10 @@ import { list } from '@/utils/Data';
 
 const route = useRoute();
 
-const currentSlide = ref(0);
-const activedSlide = ref(0);
-
 const id = ref(route.query.id);
+const currentSlide = ref(Number(id.value.slice(-3) - 235));
+const activedSlide = ref(Number(id.value.slice(-3) - 235) + 3);
+
 
 const item = computed(() => list.find(i => i.id == id.value));
 
