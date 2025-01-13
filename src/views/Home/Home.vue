@@ -157,9 +157,9 @@
                         <div class="carousel__slide">
                             <div data-aos="fade-up" data-aos-duration="2000"
                                 class="border border-[#ccc] rounded-lg p-4">
-                                <div class="flex items-center justify-center bg-white rounded-lg mb-4">
+                                <div class="flex items-center justify-center bg-white rounded-lg mb-4 w-[250px] h-[300px]">
                                     <img :src="`static/img/${news.id}.webp`" alt=""
-                                        class="w-full h-[250px] object-cover rounded-lg">
+                                        class="w-[250px] h-[250px] object-contain rounded-lg">
                                 </div>
                                 <div>
                                     <h3 class="text-lg font-semibold mb-4 text-center">{{ news.price }}</h3>
@@ -198,9 +198,9 @@
                         <div class="carousel__slide">
                             <div data-aos="fade-up" data-aos-duration="2000"
                                 class="border border-[#ccc] rounded-lg p-4">
-                                <div class="flex items-center justify-center bg-white rounded-lg mb-4">
+                                <div class="flex items-center justify-center bg-white rounded-lg mb-4 w-[250px] h-[300px]">
                                     <img :src="`static/img/${news.id}.webp`" alt=""
-                                        class="w-full h-[250px] object-cover rounded-lg">
+                                        class="w-[250px] h-[250px] object-contain rounded-lg">
                                 </div>
                                 <div>
                                     <h3 class="text-lg font-semibold mb-4 text-center">{{ news.price }}</h3>
@@ -333,17 +333,17 @@ const myList = ref(localStorage.getItem('watchList') ? JSON.parse(localStorage.g
 console.log("watch list =====>", myList.value)
 
 const add = (item) => {
-    const cartItems = JSON.parse(localStorage.getItem('watchList') || '[]')
-    const temp = cartItems.find(i => i.id === item.id)
+    const cartItems = JSON.parse(localStorage.getItem('watchList') || '[]');
+    const temp = cartItems.find(i => i.id === item.id);
     
     if (temp) {
         alert('Already in cart!');
         return;
     }
     
-    cartItems.push(item)
-    localStorage.setItem('watchList', JSON.stringify(cartItems))
-    alert('Added to cart successfully!')
+    cartItems.push(item);
+    store.commit('updateCartItems', cartItems);
+    alert('Added to cart successfully!');
 }
 
 const buy = () => {

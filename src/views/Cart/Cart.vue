@@ -40,6 +40,7 @@
 <script setup>
 import AOS from 'aos';
 import { ref, onMounted } from "vue";
+import store from '../../store';
 
 const cartItems = ref([])
 
@@ -49,8 +50,8 @@ onMounted(() => {
 })
 
 const removeFromCart = (item) => {
-    cartItems.value = cartItems.value.filter(i => i.id !== item.id)
-    localStorage.setItem('watchList', JSON.stringify(cartItems.value))
+    cartItems.value = cartItems.value.filter(i => i.id !== item.id);
+    store.commit('updateCartItems', cartItems.value);
 }
 </script>
 

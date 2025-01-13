@@ -25,7 +25,12 @@
                             <router-link to="/contact">{{ $t('nav.contact') }}</router-link>
                         </li>
                         <li class="textLi p-2 text-[#E2E8F0] hover:text-white">
-                            <router-link to="/cart">{{ $t('nav.cart') }}</router-link>
+                            <router-link to="/cart" class="flex items-center">
+                                {{ $t('nav.cart') }}
+                                <span v-if="cartCount > 0" class="ml-1 text-sm text-red-500">
+                                    ({{ cartCount }})
+                                </span>
+                            </router-link>
                         </li>
                         <li class="textLi p-2 text-[#E2E8F0] hover:text-white cursor-pointer" v-if="token" @click="logout">
                             <div>{{ $t('nav.logout') }}</div>
@@ -62,7 +67,12 @@
                             <router-link to="/contact" @click="closeMenu">{{ $t('nav.contact') }}</router-link>
                         </li>
                         <li class="p-2 pl-5 text-[#E2E8F0] hover:text-white mb-5">
-                            <router-link to="/cart" @click="closeMenu">{{ $t('nav.cart') }}</router-link>
+                            <router-link to="/cart" @click="closeMenu" class="flex items-center">
+                                {{ $t('nav.cart') }}
+                                <span v-if="cartCount > 0" class="ml-1 text-sm text-red-500">
+                                    ({{ cartCount }})
+                                </span>
+                            </router-link>
                         </li>
                         <li class="textLi p-2 text-[#E2E8F0] hover:text-white cursor-pointer">
                             <select v-model="locale" @change="handleLanguageChange" 
@@ -126,6 +136,8 @@ const locale = computed({
     i18n.global.locale.value = value;
   }
 });
+
+const cartCount = computed(() => store.state.cartItems.length);
 </script>
 
 <style lang="css" scoped>

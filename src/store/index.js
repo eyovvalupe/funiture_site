@@ -6,7 +6,8 @@ export default createStore({
   state: {
     token: "",
     userInfo: {},
-    language: localStorage.getItem('language') || 'en'
+    language: localStorage.getItem('language') || 'en',
+    cartItems: JSON.parse(localStorage.getItem('watchList') || '[]')
   },
   mutations: {
     setToken(state, data) {
@@ -19,6 +20,10 @@ export default createStore({
       state.language = lang;
       localStorage.setItem('language', lang);
     },
+    updateCartItems(state, items) {
+      state.cartItems = items;
+      localStorage.setItem('watchList', JSON.stringify(items));
+    }
   },
   actions: {
       reset({commit}) {
