@@ -3,28 +3,27 @@
         <div class="first_bg">
             <img src="/static/img/bg1.webp" alt="" />
         </div>
-        <div class="w-full min-h-screen bg-[rgba(139,136,136,0.4)] flex items-center justify-center pt-28">
-            <div class="container mx-auto px-5">
-                <div data-aos="zoom-in" data-aos-duration="2000" class="flex flex-col gap-10 items-center py-5 md:py-0">
-                    <h1 class="text-[20px] md:text-[24px] text-[#3B3B98] font-bold px-3">Hello, welcome to our
-                        site!</h1>
-                    <h2 class="text-center text-white md:text-[20px] text-[12px] p-5">
-                        About our company
+        <div class="w-full min-h-screen bg-[rgba(139,136,136,0.4)] flex items-center justify-center pt-16 sm:pt-20 md:pt-28">
+            <div class="container mx-auto px-4 sm:px-5">
+                <div data-aos="zoom-in" data-aos-duration="2000" class="flex flex-col gap-6 sm:gap-8 md:gap-10 items-center py-5 md:py-0">
+                    <h1 class="text-xl sm:text-2xl md:text-[36px] text-[#3B3B98] font-bold px-3 text-center">{{ $t('home.hello') }}</h1>
+                    <h2 class="text-center text-white text-lg sm:text-xl md:text-[24px] p-3 sm:p-4 md:p-5 cursor-pointer" @click="() => router.push('/about')">
+                        {{ $t('home.about') }}
                     </h2>
                     <button
-                        class="btnAll w-[150px] bg-[#3B3B98] py-3 text-center text-white rounded-lg font-bold hover:bg-white hover:text-[#3B3B98] hover:w-[200px] focus:ring-2 focus:ring-[#3B3B98]">See
-                        All</button>
+                        @click="scrollToAncient"
+                        class="btnAll w-[150px] bg-[#3B3B98] md:text-[20px] py-3 text-center text-white rounded-lg font-bold hover:bg-white hover:text-[#3B3B98] focus:ring-2 focus:ring-[#3B3B98]">{{ $t('home.see') }}</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="mt-5">
+    <section class="mt-5" id="ancient-furniture">
         <div class="container mx-auto p-5">
             <div class="hidden lg:block w-[100%]">
                 <div class="flex justify-between items-center mb-5">
-                    <h1 class="text-[24px] text-[#3B3B98] font-semibold">Ancient Chinese Furniture</h1>
-                    <a href="#" class="text-blue-500 hover:text-blue-700 hover:border-b border-blue-700">Learn more
+                    <h1 class="text-[24px] text-[#3B3B98] font-semibold">{{ $t('home.ancient') }}</h1>
+                    <a href="#" class="text-blue-500 hover:text-blue-700 hover:border-b border-blue-700">{{ $t('home.see') }}
                         >></a>
                 </div>
                 <div class="w-[100%] flex flex-wrap gap-[1.5%]">
@@ -43,7 +42,7 @@
 
             <div class="lg:hidden container mx-auto px-5">
                 <div class="flex justify-between items-center mb-5">
-                    <h1 class="text-[24px] text-[#3B3B98] font-semibold">Ancient Chinese Furniture</h1>
+                    <h1 class="text-[24px] text-[#3B3B98] font-semibold">{{ $t('home.ancient') }}</h1>
                     <a href="#" class="text-blue-500 hover:text-blue-700 hover:border-b border-blue-700">Learn more
                         >></a>
                 </div>
@@ -157,20 +156,24 @@
                     <Slide v-for="(news, i) in list" :key="i">
                         <div class="carousel__slide">
                             <div data-aos="fade-up" data-aos-duration="2000"
-                                class="border-[1px] border-[#ccc] rounded-[10px] mb-[20px]">
-                                <div class="flex items-center justify-center bg-white rounded-lg mb-5 ">
+                                class="border border-[#ccc] rounded-lg p-4">
+                                <div class="flex items-center justify-center bg-white rounded-lg mb-4">
                                     <img :src="`static/img/${news.id}.webp`" alt=""
-                                        class="w-[300px] mx-[20px] mt-[10px] h-[250px] rounded-lg">
+                                        class="w-full h-[250px] object-cover rounded-lg">
                                 </div>
-                                <div class="mb-[20px] mr-[20px]">
-                                    <h3 class="text-[18px] font-semibold mb-3">{{ news.price }}</h3>
-                                    <p class="text-[#606060] font-normal w-[215.8px] mb-4">{{ news.info }}</p>
-                                    <div class="flex justify-end items-center gap-5">
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-4 text-center">{{ news.price }}</h3>
+                                    <div class="flex justify-between items-center gap-4">
                                         <button
-                                            class="text-red-500 text-[24px] flex items-center gap-3 border py-2 px-10 rounded-lg hover:border-red-500" @click="add(news)"><i
-                                                class='bx bx-cart'></i></button>
+                                            class="flex-1 text-red-500 text-2xl flex items-center justify-center gap-2 border py-2 px-4 rounded-lg hover:border-red-500 transition-colors" 
+                                            @click="add(news)">
+                                            <i class='bx bx-cart'></i>
+                                        </button>
                                         <button
-                                            class="text-[#3B3B98] flex items-center gap-3 border py-2 px-10 rounded-lg hover:border-[#3B3B98]" @click="buy(news)">Buy</button>
+                                            class="flex-1 text-[#3B3B98] flex items-center justify-center gap-2 border py-2 px-4 rounded-lg hover:border-[#3B3B98] transition-colors"
+                                            @click="buy(news)">
+                                            Buy
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -188,36 +191,30 @@
         <div class="container mx-auto p-5">
             <div class="flex justify-between items-center mb-5">
                 <h2 class="text-[24px] text-[#3B3B98] font-semibold">We Recommend</h2>
-                <!-- <div class="flex justify-between items-center gap-5">
-                    <button
-                        class="text-[#3B3B98] text-2xl bg border border-[#3B3B98] rounded-full p-2 flex hover:bg-[#3B3B98] hover:text-white focus:ring-2 focus:ring-blue-500">
-                        <i class='bx bx-left-arrow-alt'></i>
-                    </button>
-                    <button
-                        class="text-[#3B3B98] text-2xl bg border border-[#3B3B98] rounded-full p-2 flex hover:bg-[#3B3B98] hover:text-white focus:ring-2 focus:ring-blue-500">
-                        <i class='bx bx-right-arrow-alt'></i>
-                    </button>
-                </div> -->
             </div>
             <div class="flex lg:flex-row gap-5">
                 <Carousel v-bind="config">
                     <Slide v-for="(news, i) in list" :key="i">
                         <div class="carousel__slide">
                             <div data-aos="fade-up" data-aos-duration="2000"
-                                class="border-[1px] border-[#ccc] rounded-[10px] mb-[20px]">
-                                <div class="flex items-center justify-center bg-white rounded-lg mb-5 ">
+                                class="border border-[#ccc] rounded-lg p-4">
+                                <div class="flex items-center justify-center bg-white rounded-lg mb-4">
                                     <img :src="`static/img/${news.id}.webp`" alt=""
-                                        class="w-[300px] mx-[20px] mt-[10px] h-[250px] rounded-lg">
+                                        class="w-full h-[250px] object-cover rounded-lg">
                                 </div>
-                                <div class="mb-[20px] mr-[20px]">
-                                    <h3 class="text-[18px] font-semibold mb-3">{{ news.price }}</h3>
-                                    <p class="text-[#606060] font-normal w-[215.8px] mb-4">{{ news.info }}</p>
-                                    <div class="flex justify-end items-center gap-5">
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-4 text-center">{{ news.price }}</h3>
+                                    <div class="flex justify-between items-center gap-4">
                                         <button
-                                            class="text-red-500 text-[24px] flex items-center gap-3 border py-2 px-10 rounded-lg hover:border-red-500" @click="add(news)"><i
-                                                class='bx bx-cart'></i></button>
+                                            class="flex-1 text-red-500 text-2xl flex items-center justify-center gap-2 border py-2 px-4 rounded-lg hover:border-red-500 transition-colors" 
+                                            @click="add(news)">
+                                            <i class='bx bx-cart'></i>
+                                        </button>
                                         <button
-                                            class="text-[#3B3B98] flex items-center gap-3 border py-2 px-10 rounded-lg hover:border-[#3B3B98]" @click="buy(news)">Buy</button>
+                                            class="flex-1 text-[#3B3B98] flex items-center justify-center gap-2 border py-2 px-4 rounded-lg hover:border-[#3B3B98] transition-colors"
+                                            @click="buy(news)">
+                                            Buy
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -304,7 +301,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, onMounted, onUnmounted } from "vue";
 import AOS from 'aos';
 import { list, newList } from "@/utils/Data";
 import { Carousel, Navigation, Slide } from "vue3-carousel";
@@ -317,24 +314,18 @@ const jump = (id) => {
 }
 
 const config = {
-    itemsToShow: 4,
+    itemsToShow: 1,
     snapAlign: "center",
-    breakpointMode: "carousel",
     breakpoints: {
-        300: {
-            itemsToShow: 4,
-            snapAlign: "center",
+        640: {
+            itemsToShow: 2,
         },
-        // 400px and up
-        400: {
-            itemsToShow: 4,
-            snapAlign: "start",
+        768: {
+            itemsToShow: 3,
         },
-        // 500px and up
-        1920: {
+        1024: {
             itemsToShow: 4,
-            snapAlign: "start",
-        },
+        }
     },
 };
 
@@ -342,39 +333,75 @@ const myList = ref(localStorage.getItem('watchList') ? JSON.parse(localStorage.g
 console.log("watch list =====>", myList.value)
 
 const add = (item) => {
-    if (!token.value) {
-        router.push({
-            name: 'login'
-        })
-        return;
-    }
-    console.log(item.id)
-    const temp = myList.value.find(i => i.id == item.id)
-    console.log("temp ========> ", temp)
+    const cartItems = JSON.parse(localStorage.getItem('watchList') || '[]')
+    const temp = cartItems.find(i => i.id === item.id)
+    
     if (temp) {
-        alert('Already added!');
+        alert('Already in cart!');
         return;
     }
-    console.log(myList.value.push(item))
-    // localStorage.setItem('watchList', temp)
-    alert('Added Successfully!')
-    localStorage.setItem('watchList', JSON.stringify(myList.value))
+    
+    cartItems.push(item)
+    localStorage.setItem('watchList', JSON.stringify(cartItems))
+    alert('Added to cart successfully!')
 }
 
 const buy = () => {
 
 }
 
-AOS.init();
+const scrollToAncient = () => {
+    const element = document.getElementById('ancient-furniture');
+    if (element) {
+        element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+};
+
+// Update AOS initialization
+onMounted(() => {
+  AOS.init({
+    // Keep animations on all devices
+    disable: false,
+    // Ensure smooth animations
+    once: false,
+    mirror: false,
+    startEvent: 'DOMContentLoaded',
+    duration: 2000,
+    offset: 50,
+    delay: 0,
+    easing: 'ease-in-out',
+    anchorPlacement: 'top-bottom'
+  });
+});
+
+// Refresh AOS on resize for better responsiveness
+const handleResize = () => {
+  AOS.refresh();
+};
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize);
+});
+
 const modal = ref(false);
 const toggleModal = () => (modal.value = !modal.value);
 const token = computed(() => store.state.token)
 </script>
 <style lang="css" scoped>
 .first_bg {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 
     img {
         width: 100%;
@@ -387,11 +414,37 @@ const token = computed(() => store.state.token)
     width: 100%;
     height: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
+}
+
+/* Add responsive carousel styles */
+.carousel__slide {
+    padding: 0 8px;
+}
+
+@media (max-width: 640px) {
+    .carousel__slide {
+        padding: 0 4px;
+    }
+}
+
+/* Add these styles to ensure proper initial loading */
+[data-aos] {
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+  
+  /* Ensure elements have proper initial state but still animate */
+  &:not(.aos-animate) {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 </style>

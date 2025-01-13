@@ -1,19 +1,30 @@
 <template>
-    <section class="pt-28">
-        <div class="container mx-auto p-5">
-            <h1 data-aos="fade-down" data-aos-duration="2000"
-                class="text-[30px] text-[#3B3B98] font-bold border-b border-[#E2E8F0] mb-10">Catalogs</h1>
-            <div class="flex gap-10">
-                <Sidebar data-aos="fade-right" data-aos-duration="2000" class="w-[20%]" />
-                <div class="w-full">
-                    <img data-aos="fade-left" data-aos-duration="2000" class="w-full mb-10"
-                        src="https://assets.asaxiy.uz/product/items/desktop/b4f8ecb2fa5cdb60ee2ff269aed3bf86202208281536023498550BJLtABC8.jpg.webp">
-
-                    <img data-aos="fade-up" data-aos-duration="2000" class="w-full mb-10"
-                        src="https://assets.asaxiy.uz/product/items/desktop/b4f8ecb2fa5cdb60ee2ff269aed3bf86202208281536023498550BJLtABC8.jpg.webp">
-
-                    <img data-aos="fade-up" data-aos-duration="2000" class="w-full"
-                        src="https://assets.asaxiy.uz/product/items/desktop/b4f8ecb2fa5cdb60ee2ff269aed3bf86202208281536023498550BJLtABC8.jpg.webp">
+    <section class="pt-20 sm:pt-24 lg:pt-28">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center gap-2 sm:gap-4">
+                <h1 data-aos="fade-down" data-aos-duration="2000"
+                    class="text-2xl sm:text-[30px] text-[#3B3B98] font-bold mb-6 sm:mb-10">Catalogs
+                </h1>
+                <h2 class="text-2xl sm:text-[30px] text-[#3B3B98] font-bold mb-6 sm:mb-10">{{ selectedCategory ? "-> " + selectedCategory : "" }}</h2>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-6 lg:gap-10">
+                <Sidebar data-aos="fade-right" data-aos-duration="2000" 
+                        class="w-full lg:w-[20%]" 
+                        @selectCategory="handleCategorySelect" />
+                
+                <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                    <div v-for="product in filteredProducts" 
+                         :key="product.id"
+                         data-aos="fade-left" 
+                         data-aos-duration="2000" 
+                         class="border rounded-lg p-4 cursor-pointer hover:shadow-lg transition-shadow"
+                         @click="jump(product.id)">
+                        <img :src="`static/img/${product.id}.webp`" 
+                             class="w-full h-40 sm:h-48 object-cover mb-4 rounded-lg">
+                        <h3 class="font-semibold mb-2">{{ product.id }}</h3>
+                        <p class="text-gray-600">{{ product.price }}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -23,6 +34,27 @@
 <script setup>
 import Sidebar from '../../components/Sidebar.vue';
 import AOS from 'aos';
+import { ref, computed } from 'vue';
+import { useRouter } from 'vue-router';
+import { list } from '@/utils/Data';
+
+const selectedCategory = ref('');
+const router = useRouter();
+
+const jump = (id) => {
+    router.push({ name: 'detail', query: { id } })
+}
+
+const handleCategorySelect = (category) => {
+    selectedCategory.value = category;
+};
+
+const filteredProducts = computed(() => {
+    if (!selectedCategory.value) {
+        return list;
+    }
+    return list.filter(product => product.type === selectedCategory.value);
+});
 
 AOS.init();
 </script>

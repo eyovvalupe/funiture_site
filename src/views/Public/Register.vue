@@ -1,30 +1,29 @@
 <template>
     <div class="auth-container">
         <div
-            class="w-[300px] h-[500px] mx-auto border-[2px] rounded-[20px] px-[20px] py-[20px] flex flex-col justify-between">
-            <h2 class="text-[32px]">Register</h2>
-            <form @submit.prevent="handleRegister">
+            class="w-[400px] p-10 mx-auto border-[2px] rounded-[20px] flex flex-col justify-between">
+            <h2 class="text-[32px]">{{ $t('auth.register') }}</h2>
+            <form class="mt-[20px]" @submit.prevent="handleRegister">
                 <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" v-model="username" id="username" placeholder="Enter your username" required />
+                    <label class="font-bold" for="username">{{ $t('auth.username') }}</label>
+                    <input type="text" v-model="username" id="username" :placeholder="$t('auth.enterUsername')" required />
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" v-model="email" id="email" placeholder="Enter your email" required />
+                    <label class="font-bold" for="email">{{ $t('auth.email') }}</label>
+                    <input type="email" v-model="email" id="email" :placeholder="$t('auth.enterEmail')" required />
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" v-model="password" id="password" placeholder="Enter your password"
+                    <label class="font-bold" for="password">{{ $t('auth.password') }}</label>
+                    <input type="password" v-model="password" id="password" :placeholder="$t('auth.enterPwd')"
                         required />
                 </div>
                 <div class="form-group">
-                    <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" v-model="confirmPassword" id="confirmPassword"
-                        placeholder="Confirm your password" required />
+                    <label class="font-bold" for="confirmPassword">{{ $t('auth.confirmPwd') }}</label>
+                    <input type="password" v-model="confirmPassword" id="confirmPassword" :placeholder="$t('auth.enterPwd')" required />
                 </div>
-                <button type="submit">Register</button>
+                <button type="submit">{{ $t('auth.register') }}</button>
             </form>
-            <p>Already have an account? <router-link to="/login">Login</router-link></p>
+            <p class="mt-[20px]">{{ $t('auth.haveAccount') }} <router-link to="/login" class="text-[#3B3B98]">{{ $t('auth.login') }}</router-link></p>
         </div>
     </div>
 </template>

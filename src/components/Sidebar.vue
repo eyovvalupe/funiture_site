@@ -16,27 +16,30 @@
                     </button>
                     <ul id="dropdown-example" :class="modal_1 ? '' : 'hidden'">
                         <li>
-                            <a href="#" class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]">Guestbook</a>
+                            <a href="#" @click.prevent="$emit('selectCategory', 'Table')" 
+                               class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]">Table</a>
                         </li>
                         <li>
-                            <a href="#"
-                                class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]">Manager's office</a>
+                            <a href="#" @click.prevent="$emit('selectCategory', 'Chair')"
+                               class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]">Chair</a>
                         </li>
                         <li>
-                            <a href="#"
-                                class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]">Desktop </a>
+                            <a href="#" @click.prevent="$emit('selectCategory', 'Desk')"
+                               class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]">Desk</a>
                         </li>
                         <li>
-                            <a href="#" class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]">Kitchen furniture</a>
+                            <a href="#" @click.prevent="$emit('selectCategory', 'Wardrobe')"
+                               class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]">Wardrobe</a>
                         </li>
                         <li>
-                            <a href="#" class="flex items-center w-full py-2 text-[#0D6EFD] hover:underline">Armchair and sofa</a>
+                            <a href="#" @click.prevent="$emit('selectCategory', 'FileBox')"
+                               class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]">File Box</a>
                         </li>
                     </ul>
                 </li>
             </ul>
 
-            <ul class="mb-5">
+            <!-- <ul class="mb-5">
                 <li>
                     <button @click="toggleModal_2" type="button"
                         class="flex items-center w-full py-2 font-semibold border-t" aria-controls="dropdown-example"
@@ -285,7 +288,7 @@
                         </li>
                     </ul>
                 </li>
-            </ul>
+            </ul> -->
         </div>
     </aside>
 </template>

@@ -48,6 +48,11 @@ const router = createRouter({
                     name: 'detail',
                     component: () => import('../views/Detail/Detail.vue')
                 },
+                {
+                    path: '/location',
+                    name: 'location',
+                    component: () => import('../views/Location/Location.vue')
+                },
             ]
         },
         {

@@ -6,6 +6,7 @@ export default createStore({
   state: {
     token: "",
     userInfo: {},
+    language: localStorage.getItem('language') || 'en'
   },
   mutations: {
     setToken(state, data) {
@@ -13,6 +14,10 @@ export default createStore({
     },
     setUserInfo(state, data) {
       state.userInfo = data;
+    },
+    setLanguage(state, lang) {
+      state.language = lang;
+      localStorage.setItem('language', lang);
     },
   },
   actions: {

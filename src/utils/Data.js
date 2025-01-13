@@ -9,7 +9,10 @@ export const list = [
     c_depth: "59cm",
     c_height: "192cm",
     c_volume: "0.80",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -102.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Desk'
   },
   {
     id: "LH236",
@@ -21,7 +24,10 @@ export const list = [
     c_depth: "41cm",
     c_height: "96cm",
     c_volume: "0.50",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Table'
   },
   {
     id: "LH237",
@@ -33,7 +39,10 @@ export const list = [
     c_depth: "61cm",
     c_height: "172cm",
     c_volume: "1.22",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Table'
   },
   {
     id: "LH238",
@@ -45,7 +54,10 @@ export const list = [
     c_depth: "35cm",
     c_height: "96cm",
     c_volume: "0.35",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Table'
   },
   {
     id: "LH239",
@@ -57,7 +69,10 @@ export const list = [
     c_depth: "35cm",
     c_height: "96cm",
     c_volume: "0.35",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Table'
   },
   {
     id: "LH240",
@@ -69,7 +84,10 @@ export const list = [
     c_depth: "35cm",
     c_height: "96cm",
     c_volume: "0.35",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Table'
   },
   {
     id: "LH241",
@@ -81,7 +99,10 @@ export const list = [
     c_depth: "44cm",
     c_height: "117cm",
     c_volume: "0.65",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Table'
   },
   {
     id: "LH242",
@@ -93,7 +114,10 @@ export const list = [
     c_depth: "13cm",
     c_height: "87cm",
     c_volume: "0.07",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Table'
   },
   {
     id: "LH243",
@@ -105,7 +129,10 @@ export const list = [
     c_depth: "96cm",
     c_height: "187cm",
     c_volume: "0.65",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Chair'
   },
   {
     id: "LH244",
@@ -117,7 +144,10 @@ export const list = [
     c_depth: "47cm",
     c_height: "94cm",
     c_volume: "0.72",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Chair'
   },
   {
     id: "LH245",
@@ -129,7 +159,10 @@ export const list = [
     c_depth: "96cm",
     c_height: "187cm",
     c_volume: "0.65",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Chair'
   },
   {
     id: "LH246",
@@ -141,7 +174,10 @@ export const list = [
     c_depth: "61cm",
     c_height: "193cm",
     c_volume: "1.22",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Chair'
   },
   {
     id: "LH247",
@@ -153,7 +189,10 @@ export const list = [
     c_depth: "42cm",
     c_height: "175cm",
     c_volume: "0.55",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Chair'
   },
   {
     id: "LH248",
@@ -165,7 +204,10 @@ export const list = [
     c_depth: "44cm",
     c_height: "199cm",
     c_volume: "0.89",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Chair'
   },
   {
     id: "LH249",
@@ -177,7 +219,10 @@ export const list = [
     c_depth: "51cm",
     c_height: "167cm",
     c_volume: "0.76",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Chair'
   },
   {
     id: "LH250",
@@ -189,7 +234,10 @@ export const list = [
     c_depth: "51cm",
     c_height: "167cm",
     c_volume: "0.78",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Desk'
   },
   {
     id: "LH251",
@@ -201,7 +249,10 @@ export const list = [
     c_depth: "79cm",
     c_height: "197cm",
     c_volume: "1.26",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Desk'
   },
   {
     id: "LH252",
@@ -213,7 +264,10 @@ export const list = [
     c_depth: "46cm",
     c_height: "127cm",
     c_volume: "0.49",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Desk'
   },
   {
     id: "LH253",
@@ -225,7 +279,10 @@ export const list = [
     c_depth: "44cm",
     c_height: "144cm",
     c_volume: "0.73",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Desk'
   },
   {
     id: "LH254",
@@ -237,7 +294,10 @@ export const list = [
     c_depth: "46cm",
     c_height: "177cm",
     c_volume: "0.70",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Desk'
   },
   {
     id: "LH255",
@@ -249,7 +309,10 @@ export const list = [
     c_depth: "56cm",
     c_height: "42cm",
     c_volume: "0.20",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Desk'
   },
   {
     id: "LH256",
@@ -261,7 +324,10 @@ export const list = [
     c_depth: "51cm",
     c_height: "66cm",
     c_volume: "0.54",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Desk'
   },
   {
     id: "LH257",
@@ -273,7 +339,10 @@ export const list = [
     c_depth: "54cm",
     c_height: "80cm",
     c_volume: "0.63",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Desk'
   },
   {
     id: "LH258",
@@ -285,7 +354,10 @@ export const list = [
     c_depth: "41cm",
     c_height: "190cm",
     c_volume: "0.75",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Desk'
   },
   {
     id: "LH259",
@@ -297,7 +369,10 @@ export const list = [
     c_depth: "41cm",
     c_height: "179cm",
     c_volume: "0.54",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Wardrobe'
   },
   {
     id: "LH260",
@@ -309,7 +384,10 @@ export const list = [
     c_depth: "56cm",
     c_height: "59cm",
     c_volume: "0.67",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Wardrobe'
   },
   {
     id: "LH261",
@@ -321,7 +399,10 @@ export const list = [
     c_depth: "42cm",
     c_height: "96cm",
     c_volume: "0.63",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Wardrobe'
   },
   {
     id: "LH262",
@@ -333,7 +414,10 @@ export const list = [
     c_depth: "46cm",
     c_height: "97cm",
     c_volume: "0.92",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Wardrobe'
   },
   {
     id: "LH263",
@@ -345,7 +429,10 @@ export const list = [
     c_depth: "49cm",
     c_height: "97cm",
     c_volume: "0.41",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Wardrobe'
   },
   {
     id: "LH264",
@@ -357,7 +444,10 @@ export const list = [
     c_depth: "54cm",
     c_height: "178cm",
     c_volume: "0.83",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Wardrobe'
   },
   {
     id: "LH265",
@@ -369,7 +459,10 @@ export const list = [
     c_depth: "60cm",
     c_height: "79cm",
     c_volume: "0.20",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'FileBox'
   },
   {
     id: "LH266",
@@ -381,7 +474,10 @@ export const list = [
     c_depth: "82cm",
     c_height: "177cm",
     c_volume: "0.68",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'FileBox'
   },
   {
     id: "LH267",
@@ -393,7 +489,10 @@ export const list = [
     c_depth: "56cm",
     c_height: "157cm",
     c_volume: "0.40",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'FileBox'
   },
   {
     id: "LH268",
@@ -405,7 +504,10 @@ export const list = [
     c_depth: "61cm",
     c_height: "193cm",
     c_volume: "1.22",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'FileBox'
   },
   {
     id: "LH269",
@@ -417,104 +519,131 @@ export const list = [
     c_depth: "51cm",
     c_height: "119cm",
     c_volume: "1.31",
-    price: '$1000'
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'FileBox'
   },
 ];
 export const newList = [
-    {
-      id: "LH235",
-      key: "Wood",
-      p_width: "65cm",
-      p_depth: "53cm",
-      p_height: "185cm",
-      c_width: "71cm",
-      c_depth: "59cm",
-      c_height: "192cm",
-      c_volume: "0.80",
-      price: '$1000'
-    },
-    {
-      id: "LH236",
-      key: "Wood",
-      p_width: "120cm",
-      p_depth: "35cm",
-      p_height: "89cm",
-      c_width: "126cm",
-      c_depth: "41cm",
-      c_height: "96cm",
-      c_volume: "0.50",
-      price: '$1000'
-    },
-    {
-      id: "LH237",
-      key: "Wood",
-      p_width: "110cm",
-      p_depth: "55cm",
-      p_height: "165cm",
-      c_width: "116cm",
-      c_depth: "61cm",
-      c_height: "172cm",
-      c_volume: "1.22",
-      price: '$1000'
-    },
-    {
-      id: "LH238",
-      key: "Wood",
-      p_width: "97cm",
-      p_depth: "29cm",
-      p_height: "89cm",
-      c_width: "103cm",
-      c_depth: "35cm",
-      c_height: "96cm",
-      c_volume: "0.35",
-      price: '$1000'
-    },
-    {
-      id: "LH239",
-      key: "Wood",
-      p_width: "97cm",
-      p_depth: "29cm",
-      p_height: "89cm",
-      c_width: "103cm",
-      c_depth: "35cm",
-      c_height: "96cm",
-      c_volume: "0.35",
-      price: '$1000'
-    },
-    {
-      id: "LH240",
-      key: "Wood",
-      p_width: "97cm",
-      p_depth: "29cm",
-      p_height: "89cm",
-      c_width: "103cm",
-      c_depth: "35cm",
-      c_height: "96cm",
-      c_volume: "0.35",
-      price: '$1000'
-    },
-    {
-      id: "LH241",
-      key: "Wood",
-      p_width: "120cm",
-      p_depth: "38cm",
-      p_height: "110cm",
-      c_width: "126cm",
-      c_depth: "44cm",
-      c_height: "117cm",
-      c_volume: "0.65",
-      price: '$1000'
-    },
-    {
-      id: "LH242",
-      key: "Wood",
-      p_width: "60cm",
-      p_depth: "7cm",
-      p_height: "80cm",
-      c_width: "66cm",
-      c_depth: "13cm",
-      c_height: "87cm",
-      c_volume: "0.07",
-      price: '$1000'
-    },
-  ];
+  {
+    id: "LH235",
+    key: "Wood",
+    p_width: "65cm",
+    p_depth: "53cm",
+    p_height: "185cm",
+    c_width: "71cm",
+    c_depth: "59cm",
+    c_height: "192cm",
+    c_volume: "0.80",
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'FileBox'
+  },
+  {
+    id: "LH236",
+    key: "Wood",
+    p_width: "120cm",
+    p_depth: "35cm",
+    p_height: "89cm",
+    c_width: "126cm",
+    c_depth: "41cm",
+    c_height: "96cm",
+    c_volume: "0.50",
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'FileBox'
+  },
+  {
+    id: "LH237",
+    key: "Wood",
+    p_width: "110cm",
+    p_depth: "55cm",
+    p_height: "165cm",
+    c_width: "116cm",
+    c_depth: "61cm",
+    c_height: "172cm",
+    c_volume: "1.22",
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Fur'
+  },
+  {
+    id: "LH238",
+    key: "Wood",
+    p_width: "97cm",
+    p_depth: "29cm",
+    p_height: "89cm",
+    c_width: "103cm",
+    c_depth: "35cm",
+    c_height: "96cm",
+    c_volume: "0.35",
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Fur'
+  },
+  {
+    id: "LH239",
+    key: "Wood",
+    p_width: "97cm",
+    p_depth: "29cm",
+    p_height: "89cm",
+    c_width: "103cm",
+    c_depth: "35cm",
+    c_height: "96cm",
+    c_volume: "0.35",
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Fur'
+  },
+  {
+    id: "LH240",
+    key: "Wood",
+    p_width: "97cm",
+    p_depth: "29cm",
+    p_height: "89cm",
+    c_width: "103cm",
+    c_depth: "35cm",
+    c_height: "96cm",
+    c_volume: "0.35",
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Fur'
+  },
+  {
+    id: "LH241",
+    key: "Wood",
+    p_width: "120cm",
+    p_depth: "38cm",
+    p_height: "110cm",
+    c_width: "126cm",
+    c_depth: "44cm",
+    c_height: "117cm",
+    c_volume: "0.65",
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Fur'
+  },
+  {
+    id: "LH242",
+    key: "Wood",
+    p_width: "60cm",
+    p_depth: "7cm",
+    p_height: "80cm",
+    c_width: "66cm",
+    c_depth: "13cm",
+    c_height: "87cm",
+    c_volume: "0.07",
+    price: '$1000',
+    location: { lat: 37.7749, lng: -122.4194 },
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat dolor sed nulla facilisis, in congue erat vehicula.',
+    type: 'Fur'
+  }
+];

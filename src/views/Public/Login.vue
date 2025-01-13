@@ -1,20 +1,20 @@
 <template>
     <div class="auth-container">
-        <div class="w-[300px] h-[400px] mx-auto border-[2px] rounded-[20px] px-[20px] py-[20px] flex flex-col justify-between">
-            <h2 class="text-[32px]">Login</h2>
+        <div class="w-[400px] p-10 mx-auto border-[2px] rounded-[20px] flex flex-col justify-between">
+            <h2 class="text-[32px]">{{ $t('auth.login') }}</h2>
             <form class="h-[250px] flex flex-col justify-between" @submit.prevent="handleLogin">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" v-model="email" id="email" placeholder="Enter your email" required />
+                <div class="form-group mt-[20px]">
+                    <label class="font-bold" for="email">{{ $t('auth.email') }}</label>
+                    <input type="text" v-model="email" id="email" :placeholder="$t('auth.email')" required />
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" v-model="password" id="password" placeholder="Enter your password"
+                    <label class="font-bold" for="password">{{ $t('auth.login') }}</label>
+                    <input type="password" v-model="password" id="password" :placeholder="$t('auth.enterPwd')"
                         required />
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit">{{ $t('auth.login') }}</button>
             </form>
-            <p>Don't have an account? <router-link to="/register">Register</router-link></p>
+            <p class="mt-[20px]">{{ $t('auth.noAccount') }} <router-link to="/register" class="text-[#3B3B98]">{{ $t('auth.register') }}</router-link></p>
         </div>
     </div>
 </template>

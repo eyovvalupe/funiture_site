@@ -1,5 +1,5 @@
 <template>
-    <header class="fixed z-10 shadow-lg w-full bg-[#A7C5BD] transition duration-1000">
+    <header class="fixed z-10 shadow-lg w-full transition duration-1000">
         <div class="container mx-auto px-5">
             <nav class="w-full flex items-center justify-between py-5">
                 <div>
@@ -13,28 +13,33 @@
                 <div class="hidden lg:block">
                     <ul class="flex items-center gap-8 text-[16px] font-bold">
                         <li class="textLi p-2 text-[#E2E8F0] hover:text-white">
-                            <router-link to="/">Home</router-link>
+                            <router-link to="/">{{ $t('nav.home') }}</router-link>
                         </li>
                         <li class="textLi p-2 text-[#E2E8F0] hover:text-white">
-                            <router-link to="/about">About Us</router-link>
+                            <router-link to="/about">{{ $t('nav.about') }}</router-link>
                         </li>
                         <li class="textLi p-2 text-[#E2E8F0] hover:text-white">
-                            <router-link to="/catalog">Catalog</router-link>
+                            <router-link to="/catalog">{{ $t('nav.catalog') }}</router-link>
                         </li>
                         <li class="textLi p-2 text-[#E2E8F0] hover:text-white">
-                            <router-link to="/contact">Contact</router-link>
+                            <router-link to="/contact">{{ $t('nav.contact') }}</router-link>
                         </li>
-                        <li class="textLi p-2 text-[#E2E8F0] hover:text-white" v-if="token">
-                            <router-link to="/cart">My Cart</router-link>
+                        <li class="textLi p-2 text-[#E2E8F0] hover:text-white">
+                            <router-link to="/cart">{{ $t('nav.cart') }}</router-link>
                         </li>
                         <li class="textLi p-2 text-[#E2E8F0] hover:text-white cursor-pointer" v-if="token" @click="logout">
-                            <div>Log out</div>
+                            <div>{{ $t('nav.logout') }}</div>
                         </li>
                         <li class="textLi p-2 text-[#E2E8F0] hover:text-white" v-if="!token">
-                            <router-link to="/login">login</router-link>
+                            <router-link to="/login">{{ $t('nav.login') }}</router-link>
                         </li>
-                        <li class="textLi p-2 text-[#E2E8F0] hover:text-white" v-if="!token">
-                            <router-link to="/register">register</router-link>
+                        <li class="textLi p-2 text-[#E2E8F0] hover:text-white cursor-pointer">
+                            <select v-model="locale" @change="handleLanguageChange" 
+                                    class="bg-transparent text-inherit border-none cursor-pointer">
+                                <option value="en" class="bg-gray-300">English</option>
+                                <option value="zh" class="bg-gray-300">中文</option>
+                                <option value="fr" class="bg-gray-300">Français</option>
+                            </select>
                         </li>
                     </ul>
                 </div>
@@ -42,22 +47,30 @@
                     <button @click="toggleMenu" class="flex p-1 rounded-lg focus:ring-2 focus:ring-[#3B3B98]">
                         <i class='text-[24px] text-white font-bold' :class="menu ? 'bx bx-x' : 'bx bx-menu'"></i>
                     </button>
-                    <ul class="absolute bg-[#A7C5BD] w-[60%] sm:w-[40%] h-[100vh] right-0 top-[76px] text-white font-bold text-[18px]"
+                    <ul class="absolute bg-[#ee8c60] w-[60%] mt-[14px] sm:w-[40%] h-[100vh] right-0 top-[76px] text-white font-bold text-[18px]"
                         :class="menu ? 'bloc' : 'hidden'">
                         <li class="p-2 pl-5 text-[#E2E8F0] hover:text-white mb-5">
-                            <router-link to="/" @click="closeMenu">Home</router-link>
+                            <router-link to="/" @click="closeMenu">{{ $t('nav.home') }}</router-link>
                         </li>
                         <li class="p-2 pl-5 text-[#E2E8F0] hover:text-white mb-5">
-                            <router-link to="/about" @click="closeMenu">About Us</router-link>
+                            <router-link to="/about" @click="closeMenu">{{ $t('nav.about') }}</router-link>
                         </li>
                         <li class="p-2 pl-5 text-[#E2E8F0] hover:text-white mb-5">
-                            <router-link to="/catalog" @click="closeMenu">Catalog</router-link>
+                            <router-link to="/catalog" @click="closeMenu">{{ $t('nav.catalog') }}</router-link>
                         </li>
                         <li class="p-2 pl-5 text-[#E2E8F0] hover:text-white mb-5">
-                            <router-link to="/contact" @click="closeMenu">Contact</router-link>
+                            <router-link to="/contact" @click="closeMenu">{{ $t('nav.contact') }}</router-link>
                         </li>
                         <li class="p-2 pl-5 text-[#E2E8F0] hover:text-white mb-5">
-                            <router-link to="/cart" @click="closeMenu">My Cart</router-link>
+                            <router-link to="/cart" @click="closeMenu">{{ $t('nav.cart') }}</router-link>
+                        </li>
+                        <li class="textLi p-2 text-[#E2E8F0] hover:text-white cursor-pointer">
+                            <select v-model="locale" @change="handleLanguageChange" 
+                                    class="bg-transparent text-inherit border-none cursor-pointer">
+                                <option value="en" class="bg-gray-300">English</option>
+                                <option value="zh" class="bg-gray-300">中文</option>
+                                <option value="fr" class="bg-gray-300">Français</option>
+                            </select>
                         </li>
                     </ul>
                 </div>
@@ -68,8 +81,12 @@
 
 <script setup>
 import { computed, ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 import store from '@/store';
 import { _logout } from '@/api/api';
+import { i18n } from '@/i18n';
+
+const { t } = useI18n();
 
 const token = computed(() => store.state.token)
 
@@ -94,10 +111,21 @@ const logout = () => {
 
 window.addEventListener("scroll", function () {
     let header = document.querySelector("header");
-    header.classList.toggle("headerText", window.scrollY > 0)
-    header.classList.toggle("backdrop-blur-sm", window.scrollY > 0)
-    header.classList.toggle("bg-white/5", window.scrollY > 0)
-})
+    header.classList.toggle("headerText", window.scrollY > 0);
+});
+
+const handleLanguageChange = () => {
+  store.commit('setLanguage', locale.value);
+  i18n.global.locale.value = locale.value;
+};
+
+const locale = computed({
+  get: () => store.state.language,
+  set: (value) => {
+    store.commit('setLanguage', value);
+    i18n.global.locale.value = value;
+  }
+});
 </script>
 
 <style lang="css" scoped>
@@ -112,5 +140,15 @@ window.addEventListener("scroll", function () {
 
 .headerText .textLi:hover {
     border-bottom: 1px solid #A7C5BD;
+}
+
+header {
+    background-color: #ee8c60;
+}
+
+.headerText {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 </style>

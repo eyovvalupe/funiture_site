@@ -1,7 +1,8 @@
 <template>
-  <div class="responsible_container">
-    <div class="flex pt-[150px] gap-[50px]">
-      <div class="sider">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-[100px] sm:pt-[120px] lg:pt-[150px]">
+    <div class="flex flex-col lg:flex-row gap-5 lg:gap-[50px]">
+      <!-- Thumbnail Carousel -->
+      <div class="sider hidden lg:block">
         <Carousel id="thumbnails" v-bind="thumbnailsConfig" v-model="activedSlide">
           <Slide v-for="(item, i) in list" :key="i">
             <div class="carousel__item" @click="slideTo(i, item)">
@@ -10,47 +11,87 @@
               </div>
             </div>
           </Slide>
-
           <template #addons>
             <Navigation />
           </template>
         </Carousel>
       </div>
 
-      <div class="main_pic">
-        <Carousel id="gallery" v-bind="galleryConfig" v-model="currentSlide">
-          <Slide v-for="(item, i) in list" :key="i">
-            <div class="carousel__item">
-              <div class="w-[600px]">
-                <div class="demo-image__preview">
-                  <el-image style="width: 100%; height: 100%" :src="`static/img/${item.id}.webp`" :zoom-rate="1.2"
-                    :preview-src-list="[`static/img/${item.id}.webp`]" :initial-index="4" fit="cover" />
-                </div>
-              </div>
-            </div>
-          </Slide>
-        </Carousel>
-      </div>
-      <div class="flex-1 p-[20px] flex flex-col">
-        <div class="text-[32px] mb-[20px]">Detail of Product</div>
-        <div class="text-[24px] mb-[15px]">Name: <span>{{ item.id }}</span></div>
-        <div class="text-[24px] mb-[15px]">Material: <span>{{ item.key }}</span></div>
-        <div class="flex">
-          <div class="flex flex-col w-1/2">
-            <div class="text-[24px] mb-[15px]">Product Dimension</div>
-            <div class="text-[24px] mb-[15px]">width: <span>{{ item.p_width }}</span></div>
-            <div class="text-[24px] mb-[15px]">Height: <span>{{ item.p_height }}</span></div>
-            <div class="text-[24px] mb-[15px]">Depth: <span>{{ item.p_depth }}</span></div>
-          </div>
-          <div class="flex flex-col w-1/2">
-            <div class="text-[24px] mb-[15px]">Carton Dimension</div>
-            <div class="text-[24px] mb-[15px]">width: <span>{{ item.c_width }}</span></div>
-            <div class="text-[24px] mb-[15px]">Height: <span>{{ item.c_height }}</span></div>
-            <div class="text-[24px] mb-[15px]">Depth: <span>{{ item.c_depth }}</span></div>
+      <!-- Main Image -->
+      <div class="main_pic w-full lg:w-auto">
+        <div class="w-full !h-[500px] lg:w-[600px]">
+          <div class="demo-image__preview !h-[500px]">
+            <el-image 
+              style="width: 100%; height: 100%" 
+              :src="`static/img/${item.id}.webp`" 
+              :zoom-rate="1.2"
+              :preview-src-list="[`static/img/${item.id}.webp`]" 
+              :initial-index="4" 
+              fit="cover" />
           </div>
         </div>
+      </div>
 
-        <div class="text-[24px] mb-[15px]">Price: <span>{{ item.price }}</span></div>
+      <!-- Product Info -->
+      <div class="flex-1">
+        <div class="text-2xl sm:text-3xl lg:text-[32px] mb-4 lg:mb-[20px]">About Product</div>
+        <div class="text-lg sm:text-xl lg:text-[24px] mb-3 lg:mb-[15px]">{{ item.description }}</div>
+        <div @click="jump(item.id)">
+          <el-button type="primary" class="w-full sm:w-[250px] h-[40px] sm:h-[50px] text-lg sm:text-xl" plain round>
+            Find Nearest Location
+          </el-button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="flex-1 p-4 sm:p-[20px] flex flex-col w-full sm:w-4/5 lg:w-2/3 mx-auto border border-gray-500 rounded-lg sm:rounded-[16px] mt-6 sm:mt-10">
+      <div class="text-xl sm:text-2xl lg:text-[32px] mb-4 sm:mb-[20px] text-center">Detail of Product</div>
+      <div class="flex w-[100%]">
+        <div class="text-[24px] mb-[15px] w-1/2 flex justify-between mr-[40px]">
+          <span class="text-black">Name</span>
+          <span class="text-gray-900">{{ item.id }}</span>
+        </div>
+        <div class="text-[24px] mb-[15px] w-1/2 flex justify-between">
+          <span class="text-black">Material</span>
+          <span class="text-gray-900">{{ item.key }}</span>
+        </div>
+      </div>
+      <div class="text-[24px] mb-[15px] flex justify-between w-1/2">
+        <span class="text-black">Price</span>
+        <span class="text-gray-900 mr-[20px]">{{ item.price }}</span>
+      </div>
+      <div class="flex gap-[10px]">
+        <div class="flex flex-col w-1/2 mr-[40px] bg-[#ee8c60] p-[10px] rounded-[16px]">
+          <div class="text-[24px] mb-[15px] text-black mx-auto">Product Dimension</div>
+          <div class="text-[24px] mb-[15px] flex justify-between">
+            <span class="text-black">width</span>
+            <span class="text-gray-100">{{ item.p_width }}</span>
+          </div>
+          <div class="text-[24px] mb-[15px] flex justify-between">
+            <span class="text-black">Height</span>
+            <span class="text-gray-100">{{ item.p_height }}</span>
+          </div>
+          <div class="text-[24px] mb-[15px] flex justify-between">
+            <span class="text-black">Depth</span>
+            <span class="text-gray-100">{{ item.p_depth }}</span>
+          </div>
+        </div>
+        <div class="flex flex-col w-1/2 bg-[#ee8c60] p-[10px] rounded-[16px]">
+          <div class="text-[24px] mb-[15px] text-black mx-auto">Carton Dimension</div>
+          <div class="text-[24px] mb-[15px] flex justify-between">
+            <span class="text-black">width</span>
+            <span class="text-gray-100">{{ item.c_width }}</span>
+          </div>
+          <div class="text-[24px] mb-[15px] flex justify-between">
+            <span class="text-black">Height</span>
+            <span class="text-gray-100">{{ item.c_height }}</span>
+          </div>
+          <div class="text-[24px] mb-[15px] flex justify-between">
+            <span class="text-black">Depth</span>
+            <span class="text-gray-100">{{ item.c_depth }}</span>
+          </div>
+        </div>
       </div>
     </div>
     {{ console.log(id) }}
@@ -60,17 +101,21 @@
 import 'vue3-carousel/carousel.css';
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
 import { computed, ref } from 'vue';
-import { ElImage } from 'element-plus';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import store from '@/store';
 import { list } from '@/utils/Data';
-
+import { ElButton } from 'element-plus';
+import { ElImage } from 'element-plus';
 const route = useRoute();
+const router = useRouter();
 
 const id = ref(route.query.id);
 const currentSlide = ref(Number(id.value.slice(-3) - 235));
 const activedSlide = ref(Number(id.value.slice(-3) - 235) + 3);
 
+const jump = (id) => {
+    router.push({ name: 'location', query: { id } })
+}
 
 const item = computed(() => list.find(i => i.id == id.value));
 
@@ -121,8 +166,11 @@ const images = Array.from({ length: 10 }, (_, index) => ({
     }
 
     img {
-      width: 500px;
-      height: 500px;
+      width: 100%;
+      height: auto;
+      max-width: 500px;
+      max-height: 500px;
+      object-fit: contain;
     }
   }
 
@@ -132,22 +180,17 @@ const images = Array.from({ length: 10 }, (_, index) => ({
         img {
           width: 100%;
           height: 100%;
+          object-fit: cover;
         }
       }
     }
   }
+}
 
-  /* .demo-image__error .image-slot {
-    font-size: 30px;
+@media (max-width: 768px) {
+  .main_pic img {
+    max-width: 100%;
+    height: auto;
   }
-
-  .demo-image__error .image-slot .el-icon {
-    font-size: 30px;
-  }
-
-  .demo-image__error .el-image {
-    width: 100%;
-    height: 200px;
-  } */
 }
 </style>
