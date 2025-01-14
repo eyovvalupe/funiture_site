@@ -18,8 +18,50 @@
                         <li class="textLi p-2 text-[#E2E8F0] hover:text-white">
                             <router-link to="/about">{{ $t('nav.about') }}</router-link>
                         </li>
-                        <li class="textLi p-2 text-[#E2E8F0] hover:text-white">
-                            <router-link to="/catalog">{{ $t('nav.catalog') }}</router-link>
+                        <li class="p-2 pl-5 text-[#E2E8F0] hover:text-white relative group" style="margin-top: 0;">
+                            <div class="flex items-center h-full cursor-pointer">
+                                <router-link 
+                                    to="/catalog" 
+                                    class="flex items-center h-full"
+                                    @click="closeMenu">{{ $t('nav.catalog') }}</router-link>
+                            </div>
+                            <ul class="submenu absolute left-0 mt-2 bg-white rounded-lg shadow-lg py-2">
+                                <li class="px-4 py-2 hover:bg-[#ee8c60] hover:text-white">
+                                    <a href="#" 
+                                       @click.prevent="handleCategorySelect('Table')"
+                                       class="block w-full">
+                                        Table
+                                    </a>
+                                </li>
+                                <li class="px-4 py-2 hover:bg-[#ee8c60] hover:text-white">
+                                    <a href="#" 
+                                       @click.prevent="handleCategorySelect('Chair')"
+                                       class="block w-full">
+                                        Chair
+                                    </a>
+                                </li>
+                                <li class="px-4 py-2 hover:bg-[#ee8c60] hover:text-white">
+                                    <a href="#" 
+                                       @click.prevent="handleCategorySelect('Desk')"
+                                       class="block w-full">
+                                        Desk
+                                    </a>
+                                </li>
+                                <li class="px-4 py-2 hover:bg-[#ee8c60] hover:text-white">
+                                    <a href="#" 
+                                       @click.prevent="handleCategorySelect('Wardrobe')"
+                                       class="block w-full">
+                                        Wardrobe
+                                    </a>
+                                </li>
+                                <li class="px-4 py-2 hover:bg-[#ee8c60] hover:text-white">
+                                    <a href="#" 
+                                       @click.prevent="handleCategorySelect('FileBox')"
+                                       class="block w-full">
+                                        File Box
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="textLi p-2 text-[#E2E8F0] hover:text-white">
                             <router-link to="/contact">{{ $t('nav.contact') }}</router-link>
@@ -95,6 +137,7 @@ import { useI18n } from 'vue-i18n';
 import store from '@/store';
 import { _logout } from '@/api/api';
 import { i18n } from '@/i18n';
+import { useRouter } from 'vue-router';
 
 const { t } = useI18n();
 
@@ -138,6 +181,20 @@ const locale = computed({
 });
 
 const cartCount = computed(() => store.state.cartItems.length);
+
+const router = useRouter();
+
+const handleCategorySelect = (category) => {
+    closeMenu();
+    router.push({
+        path: '/catalog',
+        query: { category }
+    }).then(() => {
+        window.dispatchEvent(new CustomEvent('updateCategory', { 
+            detail: { category }
+        }));
+    });
+};
 </script>
 
 <style lang="css" scoped>
@@ -162,5 +219,80 @@ header {
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  min-width: 150px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-menu li:hover .submenu {
+  display: block;
+}
+
+.submenu li {
+  padding: 8px 15px;
+  display: block;
+  color: #505050;
+  transition: all 0.3s ease;
+}
+
+.submenu li:hover {
+  background-color: #ee8c60;
+  color: white;
+}
+
+.submenu {
+    display: none;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+.group:hover .submenu {
+    display: block;
+}
+
+.submenu::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+}
+
+@media (max-width: 768px) {
+    .submenu {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        margin-top: 0.5rem;
+        margin-left: 1rem;
+    }
+    
+    .submenu li {
+        padding: 0.5rem 1rem;
+    }
+    
+    .submenu li a {
+        color: #E2E8F0;
+    }
+
+    .submenu::before {
+        display: none;
+    }
 }
 </style>

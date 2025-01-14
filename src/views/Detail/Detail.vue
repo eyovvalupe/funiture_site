@@ -5,9 +5,9 @@
       <div class="sider hidden lg:block">
         <Carousel id="thumbnails" v-bind="thumbnailsConfig" v-model="activedSlide">
           <Slide v-for="(item, i) in list" :key="i">
-            <div class="carousel__item" @click="slideTo(i, item)">
-              <div class="w-[100px] h-[100px]">
-                <img :src="`static/img/${item.id}.webp`" alt="Thumbnail Image" class="thumbnail-image" />
+            <div class="carousel__item " @click="slideTo(i, item)">
+              <div class="w-[100px]">
+                <img :src="`static/img/${item.id}.webp`" alt="Thumbnail Image" class="thumbnail-image w-[100px] h-[100px]" />
               </div>
             </div>
           </Slide>
@@ -19,8 +19,8 @@
 
       <!-- Main Image -->
       <div class="main_pic w-full lg:w-auto">
-        <div class="w-full !h-[500px] lg:w-[600px]">
-          <div class="demo-image__preview !h-[500px]">
+        <div class="w-full lg:w-[600px]">
+          <div class="demo-image__preview">
             <el-image 
               style="width: 100%; height: 100%" 
               :src="`static/img/${item.id}.webp`" 
@@ -36,10 +36,17 @@
       <div class="flex-1">
         <div class="text-2xl sm:text-3xl lg:text-[32px] mb-4 lg:mb-[20px]">About Product</div>
         <div class="text-lg sm:text-xl lg:text-[24px] mb-3 lg:mb-[15px]">{{ item.description }}</div>
-        <div @click="jump(item.id)">
-          <el-button type="primary" class="w-full sm:w-[250px] h-[40px] sm:h-[50px] text-lg sm:text-xl" plain round>
-            Find Nearest Location
-          </el-button>
+        <div class="flex gap-4">
+          <div @click="jump(item.id)">
+            <el-button type="primary" class="w-full sm:w-[250px] h-[40px] sm:h-[50px] text-lg sm:text-xl" plain round>
+              Find Nearest Location
+            </el-button>
+          </div>
+          <button
+            class="text-red-500 text-2xl flex items-center justify-center gap-2 border py-2 px-4 rounded-lg hover:border-red-500 transition-colors" 
+            @click="addToCart(item)">
+            <i class='bx bx-cart'></i>
+          </button>
         </div>
       </div>
     </div>
@@ -106,8 +113,11 @@ import store from '@/store';
 import { list } from '@/utils/Data';
 import { ElButton } from 'element-plus';
 import { ElImage } from 'element-plus';
+import { useStore } from 'vuex';
+
 const route = useRoute();
 const router = useRouter();
+// const store = useStore();
 
 const id = ref(route.query.id);
 const currentSlide = ref(Number(id.value.slice(-3) - 235));
@@ -153,6 +163,20 @@ const images = Array.from({ length: 10 }, (_, index) => ({
   id: index + 1,
   url: `https://picsum.photos/800/600?random=${index + 1}`,
 }));
+
+const addToCart = (item) => {
+    const cartItems = JSON.parse(localStorage.getItem('watchList') || '[]');
+    const temp = cartItems.find(i => i.id === item.id);
+    
+    if (temp) {
+        alert('Already in cart!');
+        return;
+    }
+    
+    cartItems.push(item);
+    store.commit('updateCartItems', cartItems);
+    alert('Added to cart successfully!');
+}
 </script>
 <style lang="css">
 .responsible_container {

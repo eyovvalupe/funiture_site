@@ -21,42 +21,42 @@
                     </div>
 
                     <div class="flex flex-col justify-center gap-3 mb-5 md:mb-0">
-                        <h1 class="text-[#1C1C1C]">About</h1>
+                        <h1 class="text-[#1C1C1C]">{{ $t('footer.about') }}</h1>
                         <div class="text-[#8B96A5] flex flex-col justify-center gap-1">
-                            <a href="#" class="hover:underline">About Us</a>
-                            <a href="#" class="hover:underline">Find store</a>
-                            <a href="#" class="hover:underline">Categories</a>
-                            <a href="#" class="hover:underline">Blogs</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.about') }}</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.findStore') }}</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.categories') }}</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.blogs') }}</a>
                         </div>
                     </div>
 
                     <div class="flex flex-col justify-center gap-3 mb-5 md:mb-0">
-                        <h1 class="text-[#1C1C1C]">Partnership</h1>
+                        <h1 class="text-[#1C1C1C]">{{ $t('footer.partnership') }}</h1>
                         <div class="text-[#8B96A5] flex flex-col justify-center gap-1">
-                            <a href="#" class="hover:underline">About Us</a>
-                            <a href="#" class="hover:underline">Find store</a>
-                            <a href="#" class="hover:underline">Categories</a>
-                            <a href="#" class="hover:underline">Blogs</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.about') }}</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.findStore') }}</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.categories') }}</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.blogs') }}</a>
                         </div>
                     </div>
 
                     <div class="flex flex-col justify-center gap-3 mb-5 md:mb-0">
-                        <h1 class="text-[#1C1C1C]">Information</h1>
+                        <h1 class="text-[#1C1C1C]">{{ $t('footer.information') }}</h1>
                         <div class="text-[#8B96A5] flex flex-col justify-center gap-1">
-                            <a href="#" class="hover:underline">Help Center</a>
-                            <a href="#" class="hover:underline">Money Refund</a>
-                            <a href="#" class="hover:underline">Shipping</a>
-                            <a href="#" class="hover:underline">Contact us</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.helpCenter') }}</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.moneyRefund') }}</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.shipping') }}</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.contactUs') }}</a>
                         </div>
                     </div>
 
                     <div class="flex flex-col justify-center gap-3">
-                        <h1 class="text-[#1C1C1C]">For users</h1>
+                        <h1 class="text-[#1C1C1C]">{{ $t('footer.forUser') }}</h1>
                         <div class="text-[#8B96A5] flex flex-col justify-center gap-1">
-                            <a href="#" class="hover:underline">Login</a>
-                            <a href="#" class="hover:underline">Register</a>
-                            <a href="#" class="hover:underline">Settings</a>
-                            <a href="#" class="hover:underline">My Orders</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.login') }}</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.register') }}</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.settings') }}</a>
+                            <a href="#" class="hover:underline">{{ $t('footer.myOrders') }}</a>
                         </div>
                     </div>
 
@@ -67,7 +67,7 @@
 
         <div class="container mx-auto px-5 bg-[#ee8c60]">
             <div class="relative flex items-center justify-between text-white py-5">
-                <p class="mx-auto">© 2025 Ecommerce.</p>
+                <p class="mx-auto">{{ $t('footer.copyright') }}</p>
             </div>
         </div>
     </footer>

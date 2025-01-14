@@ -2,9 +2,9 @@
     <section>
         <div class="container mx-auto p-5">
             <div class="mt-28 flex flex-col gap-10">
-                <h1 data-aos="fade-down" data-aos-duration="2000"
+                <h1
                     class="text-[30px] text-[#3B3B98] font-bold border-b border-[#E2E8F0]">Contact</h1>
-                <div data-aos="fade-right" data-aos-duration="2000" class="flex flex-col sm:flex-row items-center justify-start gap-5">
+                <div class="flex flex-col sm:flex-row items-center justify-start gap-5">
                     <a href="#"
                         class="phone bg-[#E2E8F0] w-full sm:w-[300px] flex items-center gap-5 shadow-lg p-2 hover:shadow-xl hover:w-[350px]">
                         <img src="https://t4.ftcdn.net/jpg/04/63/63/59/360_F_463635935_IweuYhCqZRtHp3SLguQL8svOVroVXvvZ.jpg"
@@ -23,7 +23,7 @@
                     </a>
                 </div>
                 <div>
-                    <form data-aos="zoom-in" data-aos-duration="2000" action="#" class="w-full">
+                    <form action="#" class="w-full">
                         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-5 sm:mb-10">
                             <label for="first_name"
                                 class="w-full sm:w-[48%] text-[16px] sm:text-[18px] text-[#3B3B98] mb-5 sm:mb-0">First name
@@ -55,7 +55,7 @@
                         </label>
                         <h2 class="mt-10 text-end">
                             <button
-                                class="border border-[#3B3B98] rounded-lg text-black text-[16px] sm:text-[18px] bg-[#3B3B98] py-3 px-10">Sent</button>
+                                class="border border-[#3B3B98] rounded-lg text-white text-[16px] sm:text-[18px] bg-[#3B3B98] py-3 px-10">Send</button>
                         </h2>
                     </form>
                 </div>

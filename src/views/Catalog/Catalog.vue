@@ -2,22 +2,21 @@
     <section class="pt-20 sm:pt-24 lg:pt-28">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap items-center gap-2 sm:gap-4">
-                <h1 data-aos="fade-down" data-aos-duration="2000"
-                    class="text-2xl sm:text-[30px] text-[#3B3B98] font-bold mb-6 sm:mb-10">Catalogs
+                <h1
+                    class="text-2xl sm:text-[30px] text-[#3B3B98] font-bold mb-6 sm:mb-10 cursor-pointer"
+                    @click="handleCategorySelect('')">Catalogs
                 </h1>
                 <h2 class="text-2xl sm:text-[30px] text-[#3B3B98] font-bold mb-6 sm:mb-10">{{ selectedCategory ? "-> " + selectedCategory : "" }}</h2>
             </div>
             
             <div class="flex flex-col lg:flex-row gap-6 lg:gap-10">
-                <Sidebar data-aos="fade-right" data-aos-duration="2000" 
+                <Sidebar 
                         class="w-full lg:w-[20%]" 
                         @selectCategory="handleCategorySelect" />
                 
                 <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     <div v-for="product in filteredProducts" 
                          :key="product.id"
-                         data-aos="fade-left" 
-                         data-aos-duration="2000" 
                          class="border rounded-lg p-4 cursor-pointer hover:shadow-lg transition-shadow"
                          @click="jump(product.id)">
                         <img :src="`static/img/${product.id}.webp`" 
@@ -34,7 +33,7 @@
 <script setup>
 import Sidebar from '../../components/Sidebar.vue';
 import AOS from 'aos';
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { list } from '@/utils/Data';
 
@@ -57,6 +56,18 @@ const filteredProducts = computed(() => {
 });
 
 AOS.init();
+
+onMounted(() => {
+    window.addEventListener('updateCategory', (event) => {
+        handleCategorySelect(event.detail.category);
+    });
+});
+
+onUnmounted(() => {
+    window.removeEventListener('updateCategory', (event) => {
+        handleCategorySelect(event.detail.category);
+    });
+});
 </script>
 
 <style lang="scss" scoped></style>

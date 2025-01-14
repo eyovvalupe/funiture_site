@@ -2,10 +2,10 @@
     <section class="pt-32">
         <div class="container mx-auto px-5">
             <div>
-                <h1 data-aos="fade-down" data-aos-duration="2000"
+                <h1
                     class="text-[30px] text-[#3B3B98] font-bold border-b border-[#E2E8F0] mb-10">About</h1>
 
-                <div data-aos="fade-up" data-aos-duration="2000">
+                <div>
                     <h2 class="text-[24px] text-[#A7C5BD] mb-5">Hello, our team name is <span
                             class="text-[#3B3B98] font-bold">Logo</span>
                     </h2>
@@ -55,9 +55,9 @@
                         corrupti.
                     </p>
 
-                    <img data-aos="fade-right" data-aos-duration="2000"
+                    <img
                         src="https://assets.asaxiy.uz/product/items/desktop/b4f8ecb2fa5cdb60ee2ff269aed3bf86202208281536023498550BJLtABC8.jpg.webp">
-                    <p data-aos="fade-up" data-aos-duration="2000" class="text-[16px] text-[#1F2A38] mt-5">
+                    <p class="text-[16px] text-[#1F2A38] mt-5">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Accusantium cum officiis tempora iusto
                         architecto dolore magnam, harum ut ducimus, quia eveniet! Doloribus animi repellendus autem nostrum
