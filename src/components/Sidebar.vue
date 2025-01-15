@@ -1,45 +1,78 @@
 <template>
-    <aside>
-        <div>
-            <ul class="mb-5">
-                <li>
-                    <button @click="toggleModal_1" type="button"
-                        class="flex items-center w-full py-2 font-semibold border-t" aria-controls="dropdown-example"
-                        data-collapse-toggle="dropdown-example">
-                        <span class="flex-1 text-left" sidebar-toggle-item>Category</span>
-                        <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <ul id="dropdown-example" :class="modal_1 ? '' : 'hidden'">
-                        <li>
-                            <a href="#" @click.prevent="$emit('selectCategory', 'Table')" 
-                               class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]">Table</a>
-                        </li>
-                        <li>
-                            <a href="#" @click.prevent="$emit('selectCategory', 'Chair')"
-                               class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]">Chair</a>
-                        </li>
-                        <li>
-                            <a href="#" @click.prevent="$emit('selectCategory', 'Desk')"
-                               class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]">Desk</a>
-                        </li>
-                        <li>
-                            <a href="#" @click.prevent="$emit('selectCategory', 'Wardrobe')"
-                               class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]">Wardrobe</a>
-                        </li>
-                        <li>
-                            <a href="#" @click.prevent="$emit('selectCategory', 'FileBox')"
-                               class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]">File Box</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+  <aside>
+    <div>
+      <ul class="mb-5">
+        <li>
+          <button
+            @click="toggleModal_1"
+            type="button"
+            class="flex items-center w-full py-2 font-semibold border-t"
+            aria-controls="dropdown-example"
+            data-collapse-toggle="dropdown-example"
+          >
+            <span class="flex-1 text-left" sidebar-toggle-item>{{
+              $t("catalogs.category")
+            }}</span>
+            <svg
+              sidebar-toggle-item
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <ul id="dropdown-example" :class="modal_1 ? '' : 'hidden'">
+            <li>
+              <a
+                href="#"
+                @click.prevent="$emit('selectCategory', 'Table')"
+                class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]"
+                >{{ $t("catalogs.table") }}</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                @click.prevent="$emit('selectCategory', 'Chair')"
+                class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]"
+                >{{ $t("catalogs.chair") }}</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                @click.prevent="$emit('selectCategory', 'Desk')"
+                class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]"
+                >{{ $t("catalogs.desk") }}</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                @click.prevent="$emit('selectCategory', 'Wardrobe')"
+                class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]"
+                >{{ $t("catalogs.wardrobe") }}</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                @click.prevent="$emit('selectCategory', 'FileBox')"
+                class="flex items-center w-full py-2 text-[#505050] hover:text-[#0D6EFD]"
+                >{{ $t("catalogs.filebox") }}</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
 
-            <!-- <ul class="mb-5">
+      <!-- <ul class="mb-5">
                 <li>
                     <button @click="toggleModal_2" type="button"
                         class="flex items-center w-full py-2 font-semibold border-t" aria-controls="dropdown-example"
@@ -289,10 +322,10 @@
                     </ul>
                 </li>
             </ul> -->
-        </div>
-    </aside>
+    </div>
+  </aside>
 </template>
-  
+
 <script setup>
 import { ref } from "vue";
 
@@ -317,5 +350,5 @@ const toggleModal_6 = () => (modal_6.value = !modal_6.value);
 const modal_7 = ref(false);
 const toggleModal_7 = () => (modal_7.value = !modal_7.value);
 </script>
-  
+
 <style lang="scss" scoped></style>
