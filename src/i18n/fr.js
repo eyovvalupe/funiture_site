@@ -25,6 +25,12 @@ export const fr = {
     recommend: "Nous recommandons",
     catalog: "Catalogue",
     see: "Voir le catalogue",
+    categories: "Catégories",
+    tables: "Tablas",
+    chairs: "Sillas",
+    desks: "Escritorios",
+    wardrobes: "Armarios",
+    fileboxes: "Cajas de archivos",
   },
   footer: {
     about: "À propos",

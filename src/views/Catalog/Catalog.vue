@@ -51,9 +51,10 @@
 import Sidebar from "../../components/Sidebar.vue";
 import AOS from "aos";
 import { ref, computed, onMounted, onUnmounted } from "vue";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 import { list } from "@/utils/Data";
 
+const route = useRoute();
 const selectedCategory = ref("");
 const router = useRouter();
 
@@ -75,6 +76,12 @@ const filteredProducts = computed(() => {
 AOS.init();
 
 onMounted(() => {
+  // Handle category from URL query parameter
+  const categoryFromQuery = route.query.category;
+  if (categoryFromQuery) {
+    handleCategorySelect(categoryFromQuery);
+  }
+
   window.addEventListener("updateCategory", (event) => {
     handleCategorySelect(event.detail.category);
   });

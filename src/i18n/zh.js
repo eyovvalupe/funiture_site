@@ -25,6 +25,12 @@ export const zh = {
     recommend: "我们推荐",
     catalog: "目录",
     see: "查看目录",
+    categories: "类别",
+    tables: "桌子",
+    chairs: "椅子",
+    desks: "桌子",
+    wardrobes: "衣柜",
+    fileboxes: "文件盒",
   },
   auth: {
     email: "电子邮件",

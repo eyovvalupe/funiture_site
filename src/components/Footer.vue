@@ -93,12 +93,6 @@
         </div>
       </div>
     </div>
-
-    <div class="container mx-auto px-5 bg-[#ee8c60]">
-      <div class="relative flex items-center justify-between text-white py-5">
-        <p class="mx-auto">{{ $t("footer.copyright") }}</p>
-      </div>
-    </div>
   </footer>
 </template>
 

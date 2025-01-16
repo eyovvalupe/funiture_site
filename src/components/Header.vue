@@ -12,14 +12,14 @@
         </div>
         <div class="hidden lg:block">
           <ul class="flex items-center gap-8 text-[16px] font-bold">
-            <li class="textLi p-2 text-[#E2E8F0] hover:text-white">
+            <li class="textLi p-2 text-[#646464] hover:text-[#222222]">
               <router-link to="/">{{ $t("nav.home") }}</router-link>
             </li>
-            <li class="textLi p-2 text-[#E2E8F0] hover:text-white">
+            <li class="textLi p-2 text-[#646464] hover:text-[#222222]">
               <router-link to="/about">{{ $t("nav.about") }}</router-link>
             </li>
             <li
-              class="p-2 pl-5 text-[#E2E8F0] hover:text-white relative group"
+              class="p-2 pl-5 text-[#646464] hover:text-[#222222] relative group"
               style="margin-top: 0"
             >
               <div class="flex items-center h-full cursor-pointer">
@@ -33,7 +33,7 @@
               <ul
                 class="submenu absolute left-0 mt-2 bg-white rounded-lg shadow-lg py-2"
               >
-                <li class="px-4 py-2 hover:bg-[#ee8c60] hover:text-white">
+                <li class="px-4 py-2 hover:text-white">
                   <a
                     href="#"
                     @click.prevent="handleCategorySelect('Table')"
@@ -42,7 +42,7 @@
                     {{ $t("catalogs.table") }}
                   </a>
                 </li>
-                <li class="px-4 py-2 hover:bg-[#ee8c60] hover:text-white">
+                <li class="px-4 py-2 hover:text-white">
                   <a
                     href="#"
                     @click.prevent="handleCategorySelect('Chair')"
@@ -51,7 +51,7 @@
                     {{ $t("catalogs.chair") }}
                   </a>
                 </li>
-                <li class="px-4 py-2 hover:bg-[#ee8c60] hover:text-white">
+                <li class="px-4 py-2 hover:text-white">
                   <a
                     href="#"
                     @click.prevent="handleCategorySelect('Desk')"
@@ -60,7 +60,7 @@
                     {{ $t("catalogs.desk") }}
                   </a>
                 </li>
-                <li class="px-4 py-2 hover:bg-[#ee8c60] hover:text-white">
+                <li class="px-4 py-2 hover:text-white">
                   <a
                     href="#"
                     @click.prevent="handleCategorySelect('Wardrobe')"
@@ -69,7 +69,7 @@
                     {{ $t("catalogs.wardrobe") }}
                   </a>
                 </li>
-                <li class="px-4 py-2 hover:bg-[#ee8c60] hover:text-white">
+                <li class="px-4 py-2 hover:text-white">
                   <a
                     href="#"
                     @click.prevent="handleCategorySelect('FileBox')"
@@ -80,10 +80,10 @@
                 </li>
               </ul>
             </li>
-            <li class="textLi p-2 text-[#E2E8F0] hover:text-white">
+            <li class="textLi p-2 text-[#646464] hover:text-[#222222]">
               <router-link to="/contact">{{ $t("nav.contact") }}</router-link>
             </li>
-            <li class="textLi p-2 text-[#E2E8F0] hover:text-white">
+            <li class="textLi p-2 text-[#646464] hover:text-[#222222]">
               <router-link to="/cart" class="flex items-center">
                 {{ $t("nav.cart") }}
                 <span v-if="cartCount > 0" class="ml-1 text-sm text-red-500">
@@ -92,29 +92,29 @@
               </router-link>
             </li>
             <li
-              class="textLi p-2 text-[#E2E8F0] hover:text-white cursor-pointer"
+              class="textLi p-2 text-[#646464] hover:text-[#222222] cursor-pointer"
               v-if="token"
               @click="logout"
             >
               <div>{{ $t("nav.logout") }}</div>
             </li>
             <li
-              class="textLi p-2 text-[#E2E8F0] hover:text-white"
+              class="textLi p-2 text-[#646464] hover:text-[#222222]"
               v-if="!token"
             >
               <router-link to="/login">{{ $t("nav.login") }}</router-link>
             </li>
             <li
-              class="textLi p-2 text-[#E2E8F0] hover:text-white cursor-pointer"
+              class="textLi p-2 text-[#646464] hover:text-[#222222] cursor-pointer"
             >
               <select
                 v-model="locale"
                 @change="handleLanguageChange"
                 class="bg-transparent border-none cursor-pointer focus:outline-none"
               >
-                <option value="en" class="bg-gray-300">English</option>
-                <option value="zh" class="bg-gray-300">中文</option>
-                <option value="fr" class="bg-gray-300">Français</option>
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+                <option value="fr">Français</option>
               </select>
             </li>
           </ul>
@@ -125,35 +125,35 @@
             class="flex p-1 rounded-lg focus:ring-2 focus:ring-[#3B3B98]"
           >
             <i
-              class="text-[24px] text-white font-bold"
+              class="text-[24px] text-[#646464] font-bold"
               :class="menu ? 'bx bx-x' : 'bx bx-menu'"
             ></i>
           </button>
           <ul
-            class="absolute bg-[#ee8c60] w-[60%] mt-[14px] sm:w-[40%] h-[100vh] right-0 top-[76px] text-white font-bold text-[18px]"
+            class="absolute bg-white w-[60%] mt-[14px] sm:w-[40%] h-[100vh] right-0 top-[76px] text-[#3B3B98] font-bold text-[18px]"
             :class="menu ? 'bloc' : 'hidden'"
           >
-            <li class="p-2 pl-5 text-[#E2E8F0] hover:text-white mb-5">
+            <li class="p-2 pl-5 text-[#646464] hover:text-[#222222] mb-5">
               <router-link to="/" @click="closeMenu">{{
                 $t("nav.home")
               }}</router-link>
             </li>
-            <li class="p-2 pl-5 text-[#E2E8F0] hover:text-white mb-5">
+            <li class="p-2 pl-5 text-[#646464] hover:text-[#222222] mb-5">
               <router-link to="/about" @click="closeMenu">{{
                 $t("nav.about")
               }}</router-link>
             </li>
-            <li class="p-2 pl-5 text-[#E2E8F0] hover:text-white mb-5">
+            <li class="p-2 pl-5 text-[#646464] hover:text-[#222222] mb-5">
               <router-link to="/catalog" @click="closeMenu">{{
                 $t("nav.catalog")
               }}</router-link>
             </li>
-            <li class="p-2 pl-5 text-[#E2E8F0] hover:text-white mb-5">
+            <li class="p-2 pl-5 text-[#646464] hover:text-[#222222] mb-5">
               <router-link to="/contact" @click="closeMenu">{{
                 $t("nav.contact")
               }}</router-link>
             </li>
-            <li class="p-2 pl-5 text-[#E2E8F0] hover:text-white mb-5">
+            <li class="p-2 pl-5 text-[#646464] hover:text-[#222222] mb-5">
               <router-link
                 to="/cart"
                 @click="closeMenu"
@@ -166,16 +166,16 @@
               </router-link>
             </li>
             <li
-              class="textLi p-2 text-[#E2E8F0] hover:text-white cursor-pointer"
+              class="textLi p-2 text-[#646464] hover:text-[#222222] cursor-pointer"
             >
               <select
                 v-model="locale"
                 @change="handleLanguageChange"
                 class="bg-transparent text-inherit border-none cursor-pointer"
               >
-                <option value="en" class="bg-gray-300">English</option>
-                <option value="zh" class="bg-gray-300">中文</option>
-                <option value="fr" class="bg-gray-300">Français</option>
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+                <option value="fr">Français</option>
               </select>
             </li>
           </ul>
@@ -260,21 +260,12 @@ const handleCategorySelect = (category) => {
   color: #3b3b98;
 }
 
-.headerText .textLi {
-  color: #e2e8f0;
-  transition: 1s;
-}
-
-.headerText .textLi:hover {
-  border-bottom: 1px solid #73999b;
-}
-
 header {
-  background-color: #ee8c60;
+  background-color: white;
 }
 
 .headerText {
-  background-color: rgba(255, 150, 101, 0.8);
+  background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
@@ -309,8 +300,7 @@ header {
 }
 
 .submenu li:hover {
-  background-color: #ee8c60;
-  color: white;
+  color: #222222;
 }
 
 .submenu {
@@ -352,5 +342,9 @@ header {
   .submenu::before {
     display: none;
   }
+}
+
+.lg\:hidden ul {
+  background-color: white;
 }
 </style>

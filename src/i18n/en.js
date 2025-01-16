@@ -25,6 +25,12 @@ export const en = {
     recommend: "We Recommend",
     catalog: "Catalog",
     see: "View catalog",
+    categories: "Categories",
+    tables: "Tables",
+    chairs: "Chairs",
+    desks: "Desks",
+    wardrobes: "Wardrobes",
+    fileboxes: "Fileboxes",
   },
   footer: {
     about: "About",
@@ -75,7 +81,7 @@ export const en = {
     send: "Send",
   },
   catalogs: {
-    title: "Catalogs",  
+    title: "Catalogs",
     category: "Category",
     table: "Table",
     chair: "Chair",

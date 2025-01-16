@@ -28,11 +28,11 @@
       </div>
 
       <!-- Main Image -->
-      <div class="main_pic w-full lg:w-auto flex items-center">
-        <div class="w-full lg:w-[600px] flex items-center">
-          <div class="demo-image__preview flex items-center">
+      <div class="main_pic w-full lg:w-auto">
+        <div class="w-full lg:w-[600px]">
+          <div class="demo-image__preview">
             <el-image
-              style="width: 500px; height: 500px"
+              style="width: 100%; height: 100%"
               :src="`static/img/${item.id}.webp`"
               :zoom-rate="1.2"
               :preview-src-list="[`static/img/${item.id}.webp`]"
