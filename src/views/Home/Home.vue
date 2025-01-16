@@ -434,6 +434,12 @@
       </div>
     </div>
   </section>
+  <Toast
+    v-if="showToast"
+    :message="toastMessage"
+    :type="toastType"
+    @close="showToast = false"
+  />
 </template>
 
 <script setup>
@@ -444,6 +450,7 @@ import { Carousel, Navigation, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 import store from "@/store";
 import router from "@/router";
+import Toast from "@/components/Toast.vue";
 
 const jump = (id) => {
   router.push({ name: "detail", query: { id } });
@@ -472,18 +479,26 @@ const myList = ref(
 );
 console.log("watch list =====>", myList.value);
 
+const showToast = ref(false);
+const toastMessage = ref("");
+const toastType = ref("success");
+
 const add = (item) => {
   const cartItems = JSON.parse(localStorage.getItem("watchList") || "[]");
   const temp = cartItems.find((i) => i.id === item.id);
 
   if (temp) {
-    alert("Already in cart!");
+    toastMessage.value = "Already in cart!";
+    toastType.value = "error";
+    showToast.value = true;
     return;
   }
 
   cartItems.push(item);
   store.commit("updateCartItems", cartItems);
-  alert("Added to cart successfully!");
+  toastMessage.value = "Added to cart successfully!";
+  toastType.value = "success";
+  showToast.value = true;
 };
 
 const buy = () => {};
