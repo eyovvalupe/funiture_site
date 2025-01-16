@@ -141,6 +141,12 @@
       </div>
     </div>
     {{ console.log(id) }}
+    <Toast
+      v-if="showToast"
+      :message="toastMessage"
+      :type="toastType"
+      @close="showToast = false"
+    />
   </div>
 </template>
 <script setup>
@@ -153,6 +159,7 @@ import { list } from "@/utils/Data";
 import { ElButton } from "element-plus";
 import { ElImage } from "element-plus";
 import { useStore } from "vuex";
+import Toast from "@/components/Toast.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -204,18 +211,26 @@ const images = Array.from({ length: 10 }, (_, index) => ({
   url: `https://picsum.photos/800/600?random=${index + 1}`,
 }));
 
+const showToast = ref(false);
+const toastMessage = ref("");
+const toastType = ref("success");
+
 const addToCart = (item) => {
   const cartItems = JSON.parse(localStorage.getItem("watchList") || "[]");
   const temp = cartItems.find((i) => i.id === item.id);
 
   if (temp) {
-    alert("Already in cart!");
+    toastMessage.value = "Already in cart!";
+    toastType.value = "error";
+    showToast.value = true;
     return;
   }
 
   cartItems.push(item);
   store.commit("updateCartItems", cartItems);
-  alert("Added to cart successfully!");
+  toastMessage.value = "Added to cart successfully!";
+  toastType.value = "success";
+  showToast.value = true;
 };
 </script>
 <style lang="css">

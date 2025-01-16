@@ -110,7 +110,7 @@
               <select
                 v-model="locale"
                 @change="handleLanguageChange"
-                class="bg-transparent text-inherit border-none cursor-pointer focus:outline-none"
+                class="bg-transparent border-none cursor-pointer focus:outline-none"
               >
                 <option value="en" class="bg-gray-300">English</option>
                 <option value="zh" class="bg-gray-300">中文</option>
@@ -261,12 +261,12 @@ const handleCategorySelect = (category) => {
 }
 
 .headerText .textLi {
-  color: #a7c5bd;
+  color: #e2e8f0;
   transition: 1s;
 }
 
 .headerText .textLi:hover {
-  border-bottom: 1px solid #a7c5bd;
+  border-bottom: 1px solid #73999b;
 }
 
 header {
@@ -274,7 +274,7 @@ header {
 }
 
 .headerText {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 150, 101, 0.8);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
@@ -304,7 +304,7 @@ header {
 .submenu li {
   padding: 8px 15px;
   display: block;
-  color: #505050;
+  color: #636466;
   transition: all 0.3s ease;
 }
 

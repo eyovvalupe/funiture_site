@@ -33,7 +33,7 @@ export const fr = {
     forUser: "Pour les utilisateurs",
     copyright: "© 2025 Ecommerce.",
     companyInfo:
-      "Meilleure information sur l'entreprise ici mais maintenant Lorem ipsum est",
+      "Meilleure information sur l'entreprise ici mais maintenant...",
     findStore: "Trouver un magasin",
     categories: "Catégories",
     blogs: "Blogs",

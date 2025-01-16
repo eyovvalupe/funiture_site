@@ -45,7 +45,7 @@ export const zh = {
     information: "信息",
     forUser: "用户",
     copyright: "© 2025 Ecommerce.",
-    companyInfo: "关于我们公司的最佳信息在这里，但现在只是Lorem ipsum",
+    companyInfo: "关于我们公司的最佳信息在这里，但现在只是...",
     findStore: "找到商店",
     categories: "类别",
     blogs: "博客",

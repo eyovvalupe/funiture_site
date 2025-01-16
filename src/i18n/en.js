@@ -32,8 +32,7 @@ export const en = {
     information: "Information",
     forUser: "For Users",
     copyright: "© 2025 Ecommerce.",
-    companyInfo:
-      "Best information about the company gies here but now lorem ipsum is",
+    companyInfo: "Best information about the company gies here but now...",
     findStore: "Find store",
     categories: "Categories",
     blogs: "Blogs",
@@ -76,7 +75,7 @@ export const en = {
     send: "Send",
   },
   catalogs: {
-    title: "Catalogs",
+    title: "Catalogs",  
     category: "Category",
     table: "Table",
     chair: "Chair",
