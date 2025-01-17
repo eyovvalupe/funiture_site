@@ -31,6 +31,7 @@ export const en = {
     desks: "Desks",
     wardrobes: "Wardrobes",
     fileboxes: "Fileboxes",
+    items: "items",
   },
   footer: {
     about: "About",

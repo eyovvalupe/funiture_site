@@ -31,6 +31,7 @@ export const fr = {
     desks: "Escritorios",
     wardrobes: "Armarios",
     fileboxes: "Cajas de archivos",
+    items: "elementos",
   },
   footer: {
     about: "À propos",

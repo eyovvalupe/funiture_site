@@ -62,7 +62,7 @@
               {{ $t(`home.${category.name}`) }}
             </h3>
             <p class="text-sm text-gray-500 text-center mt-1">
-              {{ category.itemCount }} items
+              {{ category.itemCount }} {{ $t("home.items") }}
             </p>
           </div>
         </div>

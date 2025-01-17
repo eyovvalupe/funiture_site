@@ -31,6 +31,7 @@ export const zh = {
     desks: "桌子",
     wardrobes: "衣柜",
     fileboxes: "文件盒",
+    items: "件",
   },
   auth: {
     email: "电子邮件",
