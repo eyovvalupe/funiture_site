@@ -144,7 +144,7 @@
               }}</router-link>
             </li>
             <li class="p-2 pl-5 text-[#646464] hover:text-[#222222] mb-5">
-              <router-link to="/catalog" @click="closeMenu">{{
+              <router-link to="/list" @click="closeMenu">{{
                 $t("nav.catalog")
               }}</router-link>
             </li>

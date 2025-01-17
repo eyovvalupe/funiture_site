@@ -70,7 +70,7 @@
     </div>
   </section>
 
-  <section class="mt-5" id="ancient-furniture">
+  <!-- <section class="mt-5" id="ancient-furniture">
     <div class="container mx-auto p-5">
       <div class="hidden lg:block w-[100%]">
         <div class="flex justify-between items-center mb-5">
@@ -136,7 +136,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="mt-5 relative">
     <div class="second_bg">
@@ -621,7 +621,7 @@ const categories = ref([
 
 const handleCategoryClick = (categoryId) => {
   // Navigate to catalog and dispatch the event
-  router.push(`/catalog?category=${categoryId}`);
+  router.push(`/list?category=${categoryId}`);
   // Dispatch a custom event to update the category
   window.dispatchEvent(
     new CustomEvent("updateCategory", {
