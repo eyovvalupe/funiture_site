@@ -24,7 +24,7 @@
             >
               <div class="flex items-center h-full cursor-pointer">
                 <router-link
-                  to="/catalog"
+                  to="/list"
                   class="flex items-center h-full"
                   @click="closeMenu"
                   >{{ $t("nav.catalog") }}</router-link
@@ -242,7 +242,7 @@ const handleCategorySelect = (category) => {
   closeMenu();
   router
     .push({
-      path: "/catalog",
+      path: "/list",
       query: { category },
     })
     .then(() => {

@@ -28,13 +28,13 @@
       </div>
 
       <!-- Main Image -->
-      <div class="main_pic w-full lg:w-auto">
-        <div class="w-full lg:w-[600px]">
-          <div class="demo-image__preview">
+      <div class="main_pic w-full lg:w-auto flex items-center">
+        <div class="w-full lg:w-[600px] flex items-center">
+          <div class="demo-image__preview w-[400px] h-[400px] border-[0.02rem] border-grey rounded-[16px] overflow-hidden">
             <el-image
               style="width: 100%; height: 100%"
               :src="`static/img/${item.id}.webp`"
-              :zoom-rate="1.2"
+              :zoom-rate="2"
               :preview-src-list="[`static/img/${item.id}.webp`]"
               :initial-index="4"
               fit="cover"
