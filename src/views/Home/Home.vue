@@ -369,7 +369,7 @@
           {{ $t("home.catalog") }}
         </h1>
         <a
-          href="/catalog"
+          href="/list"
           class="text-blue-500 hover:text-blue-700 hover:border-b border-blue-700"
           >{{ $t("home.see") }} >></a
         >
