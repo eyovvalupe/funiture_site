@@ -271,7 +271,10 @@
         <Carousel v-bind="config">
           <Slide v-for="(news, i) in list" :key="i">
             <div class="carousel__slide w-full">
-              <div class="border border-[#ccc] rounded-lg p-4 w-full">
+              <div
+                class="border border-[#ccc] rounded-lg p-4 w-full cursor-pointer"
+                @click="jump(news.id)"
+              >
                 <div
                   class="flex items-center justify-center bg-white rounded-lg mb-4 w-full h-[300px]"
                 >
@@ -322,7 +325,10 @@
         <Carousel v-bind="config">
           <Slide v-for="(news, i) in list" :key="i">
             <div class="carousel__slide w-full">
-              <div class="border border-[#ccc] rounded-lg p-4 w-full">
+              <div
+                class="border border-[#ccc] rounded-lg p-4 w-full cursor-pointer"
+                @click="jump(news.id)"
+              >
                 <div
                   class="flex items-center justify-center bg-white rounded-lg mb-4 w-full h-[300px]"
                 >

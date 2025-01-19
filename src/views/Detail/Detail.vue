@@ -2,7 +2,7 @@
   <div
     class="container mx-auto px-4 sm:px-6 lg:px-8 pt-[100px] sm:pt-[120px] lg:pt-[150px]"
   >
-    <div class="flex flex-col lg:flex-row gap-5 lg:gap-[50px]">
+    <div class="flex flex-col lg:flex-row gap-5 lg:gap-[50px] flex-wrap">
       <!-- Thumbnail Carousel -->
       <div class="sider hidden lg:block">
         <Carousel
@@ -30,7 +30,9 @@
       <!-- Main Image -->
       <div class="main_pic w-full lg:w-auto flex items-center">
         <div class="w-full lg:w-[600px] flex items-center">
-          <div class="demo-image__preview w-[400px] h-[400px] border-[0.02rem] border-grey rounded-[16px] overflow-hidden">
+          <div
+            class="demo-image__preview w-[550px] h-[550px] border-[0.02rem] border-grey rounded-[16px] overflow-hidden"
+          >
             <el-image
               style="width: 100%; height: 100%"
               :src="`static/img/${item.id}.webp`"
