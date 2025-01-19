@@ -368,10 +368,10 @@
         <h1 class="text-[24px] text-[#3B3B98] font-semibold">
           {{ $t("home.catalog") }}
         </h1>
-        <a
-          href="/list"
+        <router-link
+          to="/list"
           class="text-blue-500 hover:text-blue-700 hover:border-b border-blue-700"
-          >{{ $t("home.see") }} >></a
+          >{{ $t("home.see") }} >></router-link
         >
       </div>
       <div>
